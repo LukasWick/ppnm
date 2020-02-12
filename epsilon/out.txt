@@ -1,0 +1,2 @@
+approx ikke ens: False
+approx "ens": True

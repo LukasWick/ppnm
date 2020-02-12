@@ -1,0 +1,39 @@
+1: What is the mcs option to turn off all warnings?
+Hints: man mcs, mcs --help, or [dotnet compile options].
+    -warn:0
+
+2: What is the mcs option to turn off informational warnings?
+    -warn:3
+3: Rewrite this piece of code, x=(a>b?a:b), using the if statement.
+    if (a>b){
+        x = a;
+    }
+    else{
+        x = b; 
+    }
+4: If you need mathematical functions from, say, cmath.dll library, how do you link your program with the library?
+    Give mcs the flag -reference:cmath.dll
+5: What will the following piece of code print?
+int i=0;
+Write("{0}\n",i);
+Write("{0}\n",i++);
+Write("{0}\n",++i);
+Explain.
+    It will print: 
+    0
+    0
+    2
+    
+    The first is trivial, the second it will first print then add 1, and in the second it will add one more and then print 
+6: Rewrite the loop while(condition)body using the for loop.
+    for (init;condition;inc) {body}
+    The task dose not realy make sense since the part incrimenting and changing the conditoion is part of body.
+7: Rewrite the loop for(init;cond;inc)body using the while loop.
+    init;
+    while(cond){
+        inc;
+        body;}
+8: Rewrite the loop do body while(condition); using the for loop.
+    body;
+    for(condition){body;}
+    Same problem as 6
