@@ -1,0 +1,3 @@
+set term svg fsize 18 background rgb "white"
+set out "plotB2.svg"
+plot "outB2.txt" using (1/$2)*sin($1):(1/$2)*cos($1) with lines notitle

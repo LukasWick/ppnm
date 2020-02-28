@@ -24,6 +24,14 @@ WriteLine($"result = {q}, result/exact={q/exact} ncalls={ncalls}");
 if(math.approx(q,exact,acc,eps))WriteLine("test passed\n");
 else {ierr++;WriteLine("test failed\n");}
 
+acc=1e-6; eps=0; exact = 2.0/5*(1-Exp(-PI));
+WriteLine($"o8a: testing int_0^PI Exp(-x)Sin(x)^2dx={exact},acc={acc},eps={eps}");
+f = delegate(double x){ ncalls++; return Exp(-x)*Sin(x)*Sin(x);};
+ncalls=0; q=quad.o8a(f,0,PI,acc,eps);
+WriteLine($"result = {q}, result/exact={q/exact} ncalls={ncalls}");
+if(math.approx(q,exact,acc,eps))WriteLine("test passed\n");
+else {ierr++;WriteLine("test failed\n");}
+
 	acc=1e-6; eps=0; exact = Sqrt(PI);
 WriteLine($"o8av: testing int_-inf^inf exp(-x^2)dx={exact},acc={acc},eps={eps}");
 	f = delegate(double x){ ncalls++; return Exp(-x*x);};
