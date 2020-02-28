@@ -1,0 +1,12 @@
+set term svg background rgb "white"
+set out "Gamma.svg"
+set xlabel "x"
+set ylabel "y"
+set key bottom right
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Gamma function"
+plot [-4:6][-5:5] \
+	 "out.gamma.txt" with lines title "gamma" \
+	,"out.gamma.test.txt" with points pt 7 title "true gamma"
