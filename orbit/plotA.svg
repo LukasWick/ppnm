@@ -141,7 +141,7 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>analytical</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(460.4,59.0)" stroke="none" fill="black" font-family="Arial" font-size="18.00"  text-anchor="end">
+	<g transform="translate(233.1,59.0)" stroke="none" fill="black" font-family="Arial" font-size="18.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >analytical</tspan></text>
 	</g>
 </g>
@@ -157,17 +157,17 @@
 	<use xlink:href='#gpPt0' transform='translate(478.8,88.0) scale(6.75)' color='rgb(148,   0, 211)'/>
 	<use xlink:href='#gpPt0' transform='translate(535.9,69.9) scale(6.75)' color='rgb(148,   0, 211)'/>
 	<use xlink:href='#gpPt0' transform='translate(562.1,63.3) scale(6.75)' color='rgb(148,   0, 211)'/>
-	<use xlink:href='#gpPt0' transform='translate(504.9,52.3) scale(6.75)' color='rgb(148,   0, 211)'/>
+	<use xlink:href='#gpPt0' transform='translate(277.6,52.3) scale(6.75)' color='rgb(148,   0, 211)'/>
 </g>
 	</g>
 	<g id="gnuplot_plot_2" ><title>diff</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(460.4,86.0)" stroke="none" fill="black" font-family="Arial" font-size="18.00"  text-anchor="end">
+	<g transform="translate(233.1,86.0)" stroke="none" fill="black" font-family="Arial" font-size="18.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >diff</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0, 158, 115)'  d='M473.0,79.3 L536.9,79.3 M94.5,426.0 L110.1,406.0 L141.3,366.3 L189.2,307.9 L253.0,238.2 L314.8,182.1
+	<path stroke='rgb(  0, 158, 115)'  d='M245.7,79.3 L309.6,79.3 M94.5,426.0 L110.1,406.0 L141.3,366.3 L189.2,307.9 L253.0,238.2 L314.8,182.1
 		L370.5,141.8 L424.7,111.2 L478.8,88.0 L535.9,69.8 L562.1,63.2  '/></g>
 	</g>
 <g fill="none" color="#FFFFFF" stroke="rgb(  0, 158, 115)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">

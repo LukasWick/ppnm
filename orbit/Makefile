@@ -1,15 +1,15 @@
-all: plotA.svg plotB1.svg plotB2.svg plotB3.svg
+all: PlotA.svg PlotB1.svg PlotB2.svg PlotB3.svg
 
-plotA.svg: plotA.gpi outA.txt
+PlotA.svg: plotA.gpi outA.txt
 	gnuplot $<
 
-plotB1.svg: plotB1.gpi outB1.txt
+PlotB1.svg: plotB1.gpi outB1.txt
 	gnuplot $<
 
-plotB2.svg: plotB2.gpi outB2.txt
+PlotB2.svg: plotB2.gpi outB2.txt
 	gnuplot $<
 
-plotB3.svg: plotB3.gpi outB3.txt
+PlotB3.svg: plotB3.gpi outB3.txt
 	gnuplot $<
 
 outA.txt: mainA.exe

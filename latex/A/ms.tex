@@ -1,0 +1,39 @@
+%\pdfoutput=0
+\documentclass[twocolumn]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\title{An example of using \LaTeX \ and Gnuplot: Euler spiral}
+\author{Lukas Martin Wick}
+\begin{document}
+\maketitle
+
+An 'Euler spiral' is a curve whose curvature changes linearly with its curve length 
+(the curvature of a circular curve is equal to the reciprocal of the radius). 
+Euler spirals are also commonly referred to as 'spiros', 'clothoids', or 'Cornu spirals'.
+
+Euler spirals have applications to diffraction computations. They are also widely used as transition curves in railroad engineering/highway engineering
+for connecting and transitioning the geometry between a tangent and a circular curve. 
+A similar application is also found in photonic integrated circuits. The principle of linear 
+variation of the curvature of the transition curve between a tangent and a circular curve defines the geometry of the Euler spiral: 
+
+\begin{itemize}
+    \item Its curvature begins with zero at the straight section (the tangent) and increases linearly with its curve length.
+    \item Where the Euler spiral meets the circular curve, its curvature becomes equal to that of the latter.
+\end{itemize}
+
+Normalized Euler spirals can be expressed as:
+\begin{align}
+    x &= \int_0^L \cos s^2 ds \\
+    y &= \int_0^L \sin s^2 ds
+\end{align}
+The above is from \url{https://en.wikipedia.org/wiki/Euler_spiral}.
+A plot of the normalized Euler spirals can be seen in figure \ref{fig:eulerSpirals}
+\begin{figure}[]
+    \centering
+\input{plot-eulerSpiral.tex}
+\caption{Illustration of the Euler spiral function.}
+\label{fig:eulerSpirals}
+\end{figure}
+
+\end{document}
