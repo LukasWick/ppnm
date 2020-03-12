@@ -1,0 +1,7 @@
+1. The main method is the method that is run when the script is run. (When the .exe file is run) Without it the code would compile to a dll file that could not be run
+2. Source code is code we can read ad write in (.cs). bytecode (.dll or .exe) is the translation of the source-code into the instructions for an abstract processor realised by a runtime-system (mono). If it contais a main and is a ready program it becomes an executable (exe)
+3. To make a complete code eg hello.cs into an executable byte code you can copile it using mcs hello.cs 
+4. You can run it using mono hello.exe
+5. cmath.cs into a bytecode library cmath.dll?: mcs cmath.cs -target:libarary -out:cmath.dll
+6. How can you link a bytecode library, say cmath.dll, when compiling your file with the Main method, say main.cs?
+	mcs -reference:cmath.dll -out:main.exe main.cs

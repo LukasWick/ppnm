@@ -1,0 +1,12 @@
+set term svg background rgb "white"
+set out "LngammaLong.svg"
+set xlabel "x"
+set ylabel "y"
+set key bottom right
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Ln(Gamma) function"
+plot [][] \
+	 "out.lngammaLong.txt" with lines title "lngamma" \
+	,"out.lngammaLong.test.txt" with points pt 1 title "true lngamma"

@@ -1,0 +1,10 @@
+set term cairolatex input
+set size ratio -1
+set size square
+set out "plot-eulerSpiral.tex"
+set xlabel "$x$"
+set ylabel "$y$"
+set key top left
+set xzeroaxis
+set yzeroaxis
+plot "out-eulerSpiral.txt" with lines title "Euler spiral"

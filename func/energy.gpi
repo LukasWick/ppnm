@@ -1,0 +1,11 @@
+set term svg background rgb "white"
+set out "Energy.svg"
+set xlabel "a"
+set ylabel "energy"
+set key bottom right
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Variational energy"
+plot [0.1:2]\
+	 "outFile.txt" with lines title "H_OS" 

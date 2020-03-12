@@ -1,0 +1,18 @@
+set term svg font "Arial,20" size 1024,600 background rgb "white"
+set out "plotA.svg"
+set xlabel "x"
+set ylabel "y"
+set key top left
+set xzeroaxis
+set yzeroaxis
+set multiplot layout 1,2
+set title "Plot 1: Liniar interpolation"
+plot "out-linterp.txt" with lines title "linterp"\
+,"out-xydata.txt" title "cos(x)"
+
+#
+set title "Plot 2: intergral"
+plot "out-integral.txt" using ($1):($2) with lines title "Integeral(cos(x))"\
+,"out-integral.txt" using ($1):($3) with lines title "sin(x)"
+#
+unset multiplot
