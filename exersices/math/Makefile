@@ -9,7 +9,7 @@ out.txt : main.exe
 main.exe : main.cs cmath.dll
 	mcs $(CSFLAGS) -reference:cmath.dll -out:$@ $<
 
-CDIR=../lib/complex
+CDIR=../../lib/complex
 cmath.dll : $(CDIR)/cmath.cs $(CDIR)/complex.cs
 	mcs $(CSFLAGS) -target:library -out:$@ $^
 	cp $(CDIR)/cmath.dll .

@@ -32,7 +32,7 @@ mainB.exe: mainB.cs matlib.dll
 	mcs -reference:matlib.dll $<
 
 
-LIBDIR = ../matlib
+LIBDIR = ../../matlib
 matlib.dll: $(LIBDIR)/matrix/vector.cs $(LIBDIR)/ode/ode.cs 
 	mcs $^ -target:library -out:$@
 

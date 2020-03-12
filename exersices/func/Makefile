@@ -14,7 +14,7 @@ main.exe: main.cs matlib.dll
 psiMain.exe: psiMain.cs matlib.dll
 	mcs $< -reference:matlib.dll -out:$@
 
-LIBDIR = ../matlib
+LIBDIR = ../../matlib
 SRC  = $(LIBDIR)/integration/quado8.cs
 SRC += $(LIBDIR)/integration/quado4.cs
 matlib.dll: $(SRC)
