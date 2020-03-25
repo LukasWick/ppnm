@@ -1,11 +1,13 @@
-all: outA.txt plotA.svg
+all: outA.txt plotA.svg plotB1.svg
 	cat outA.txt
 
 plotA.svg: plotA.gpi out.plotA.txt
 	gnuplot $<
 
+plotB1.svg: plotB1.gpi out.plotB1.txt
+	gnuplot $<
 
-outA.txt out.plotA.txt: main.exe
+outA.txt out.plotA.txt out.plotB1.txt: main.exe
 	mono $< > $@
 
 main.exe: main.cs matlib.dll
