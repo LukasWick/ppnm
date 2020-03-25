@@ -68,6 +68,13 @@ public static vector operator/(vector v, double a){
 	for(int i=0;i<v.size;i++)r[i]=v[i]/a;
 	return r; }
 
+public static vector operator/(vector v1, vector v2){
+	if (v1.size != v2.size)
+		throw new System.ArgumentException ($"Vectors must have equal length, but had length {v1.size} and {v2.size}");
+	vector r=new vector(v1.size);
+	for(int i=0;i<v1.size;i++)r[i]=v1[i]/v2[i];
+	return r; }
+
 public double dot(vector o){
 	double sum=0;
 	for(int i=0;i<size;i++)sum+=this[i]*o[i];
@@ -83,8 +90,19 @@ public double norm(){
 	return meanabs*sum;
 	}
 
+public static vector pow(vector v,double n){
+	vector r = new vector(v.size);
+	for(int i=0;i<v.size;i++)r[i]=Pow(v[i],n);
+	return r; 
+}
+
+public static vector pow(vector v,int n){return pow(v,(double)n); }
+
+public static vector sqrt(vector v){
+	return pow(v,1.0/2);
+}
 public vector copy(){
-	vector b=new vector(this.size);
+	vector b = new vector(this.size);
 	for(int i=0;i<this.size;i++)b[i]=this[i];
 	return b;
 }
@@ -100,4 +118,13 @@ public bool approx(vector o){
 		if(!approx(this[i],o[i]))return false;
 	return true;
 	}
+
+public static vector linspace(double z0, double zend, int N){
+	var z = new vector(N);
+	for(int i=0;i<N;i++){
+        z[i] = z0+(zend-z0)/(N-1)*i;
+	}
+	return z;
+}
+
 }//vector

@@ -1,0 +1,23 @@
+set term svg font "Arial,20" size 1024,1024 background rgb "white"
+set out "plotC.svg"
+set xlabel "x"
+set ylabel "y"
+set key top right
+set rmargin 0
+set xtics 1
+set yzeroaxis
+set multiplot layout 2,2 title "Cspline interpolation" 
+set title "Spline"
+plot "out-xydata.txt" with points pointtype 7 title "points"\
+,"out-cSpline.txt" using ($1):($2) with lines title "cspline"\
+,"out-cSpline.txt" using ($1):($3) with lines title "exact"\
+#
+set title "Intergral"
+plot "out-cIntegral.txt" using ($1):($2) with lines title "spline integral"\
+,"out-cIntegral.txt" using ($1):($3) with lines title "exact integral"
+#
+set title "Derivative"
+plot "out-cDerivative.txt" using ($1):($2) with lines title "spline derivative"\
+,"out-cDerivative.txt" using ($1):($3) with lines title "exact derivative"
+#
+unset multiplot

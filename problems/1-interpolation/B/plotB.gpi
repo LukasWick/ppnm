@@ -1,0 +1,23 @@
+set term svg font "Arial,20" size 1024,1024 background rgb "white"
+set out "plotB.svg"
+set xlabel "x"
+set ylabel "y"
+set key top right
+set rmargin 0
+set xtics 1
+set yzeroaxis
+set multiplot layout 2,2 title "Qspline interpolation" 
+set title "Spline"
+plot "out-xydata.txt" with points pointtype 7 title "points"\
+,"out-qSpline.txt" using ($1):($2) with lines title "cspline"\
+,"out-qSpline.txt" using ($1):($3) with lines title "exact"\
+#
+set title "Intergral"
+plot "out-qIntegral.txt" using ($1):($2) with lines title "spline integral"\
+,"out-qIntegral.txt" using ($1):($3) with lines title "exact integral"
+#
+set title "Derivative"
+plot "out-qDerivative.txt" using ($1):($2) with lines title "spline derivative"\
+,"out-qDerivative.txt" using ($1):($3) with lines title "exact derivative"
+#
+unset multiplot
