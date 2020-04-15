@@ -1,0 +1,8 @@
+
+∫01 dx √(x) = 2/3 .
+Numerical integration: 0.666953909054655
+Called function 16 times
+
+∫01 dx 4√(1-x²) = π = 3.14159265358979
+Numerical integration: 3.14183457802727
+Called function 28 times

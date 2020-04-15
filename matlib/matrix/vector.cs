@@ -14,7 +14,20 @@ public double this[int i]{
 			data[data.Length+i]=value; 
 		else 
 			data[i]=value;}
+}
 
+public vector this[int i, int j]{
+	get{
+		if (i<0)i = data.Length+i; 
+		if (j<0)j = data.Length+j;
+		if (i>j) return new vector(0);
+		vector r = new vector(j-i);
+		for(int k = i;k<j;k++){
+			r[k] = data[k];
+		}
+		return r;
+	}
+		
 }
 
 public vector(int n){data=new double[n];}
@@ -41,6 +54,15 @@ public static vector operator+(vector v, vector u){
 	vector r=new vector(v.size);
 	for(int i=0;i<r.size;i++)r[i]=v[i]+u[i];
 	return r; }
+
+public static vector operator+(vector v, double a){
+	vector r=new vector(v.size);
+	for(int i=0;i<r.size;i++)r[i]=v[i]+a;
+	return r; }
+
+public static vector operator+(double a, vector v){
+	return v+a; }
+
 
 public static vector operator-(vector v, vector u){
 	vector r=new vector(v.size);
@@ -87,20 +109,9 @@ public double norm(){
 	meanabs/=size;
 	double sum=0;
 	for(int i=0;i<size;i++)sum+=(this[i]/meanabs)*(this[i]/meanabs);
-	return meanabs*sum;
+	return meanabs*Sqrt(sum);
 	}
 
-public static vector pow(vector v,double n){
-	vector r = new vector(v.size);
-	for(int i=0;i<v.size;i++)r[i]=Pow(v[i],n);
-	return r; 
-}
-
-public static vector pow(vector v,int n){return pow(v,(double)n); }
-
-public static vector sqrt(vector v){
-	return pow(v,1.0/2);
-}
 public vector copy(){
 	vector b = new vector(this.size);
 	for(int i=0;i<this.size;i++)b[i]=this[i];
@@ -118,6 +129,45 @@ public bool approx(vector o){
 		if(!approx(this[i],o[i]))return false;
 	return true;
 	}
+
+
+// Lukas kode
+
+public static vector pow(vector v,double n){
+	vector r = new vector(v.size);
+	for(int i=0;i<v.size;i++)r[i]=Pow(v[i],n);
+	return r; 
+}
+
+public static vector pow(vector v,int n){return pow(v,(double)n); }
+
+public static vector sqrt(vector v){
+	return pow(v,1.0/2);
+}
+
+public static vector abs(vector v){
+	vector r = new vector(v.size);
+	for(int i=0;i<v.size;i++)r[i]=Abs(v[i]);
+	return r; 
+}
+
+public static double min(vector v){
+	double min = v[0];
+	for(int i=1;i<v.size;i++){
+		if (v[i]<min)
+			min = v[i];
+	}
+	return min; 
+}
+public static double max(vector v){
+	double max = v[0];
+	for(int i=1;i<v.size;i++){
+		if (v[i]>max)
+			max = v[i];
+	}
+	return max; 
+}
+
 
 public static vector linspace(double z0, double zend, int N){
 	var z = new vector(N);

@@ -1,0 +1,7 @@
+2)
+
+a) 
+b) You will only change the row above via line 2 and 3 in equation 10, and these only depend on the values of the row above wich are zero
+
+
+5) Change both signs in the atan2. When the first parameter is zero this gives pi instead of 0, wich makes it sort in the oppocite direction

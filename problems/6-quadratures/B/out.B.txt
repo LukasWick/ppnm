@@ -1,0 +1,20 @@
+
+∫01 dx 1/√(x) = 2 .
+With clenshaw curtis: 1.99987031834155
+Called function 8 times
+Without clenshaw curtis: 1.9995161175042
+Called function 4272 times
+
+∫01 dx ln(x)/√(x) = -4 .
+With clenshaw curtis: -3.85632355102814
+Called function 12 times
+Without clenshaw curtis: -3.99740428719504
+Called function 4272 times
+
+Testing ∫01 dx 4√(1-x²) = π = 3.14159265358979
+With clenshaw curtis: 3.14159265358979
+Called function 3593356 times
+Without clenshaw curtis: 3.14159265358979
+Called function 2479832 times
+With o8av: 3.14159265358979
+Called function 768 times

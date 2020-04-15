@@ -1,0 +1,9 @@
+set term svg font "Arial,20" size 1024,600 background rgb "white"
+set out "plotA1.svg"
+set xlabel "t"
+set ylabel "sin(t)"
+set title "Integrate sin with RK12 stepper. User specified stepsize"
+set key top right
+plot "out.plotA1.txt" using ($1):($2) title "integral"\
+,sin(x) with lines title "exact"
+

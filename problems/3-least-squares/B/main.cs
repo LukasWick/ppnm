@@ -29,12 +29,12 @@ static void Main(){
     double Delta_a = Exp(Delta_c[0]);
     double Delta_lambda = Delta_c[1];
 
-    WriteLine("Fit: a = {0} +-{1}, og lambda = {2}+-{3}",a,Delta_a,lambda,Delta_lambda);
+    WriteLine("Fit: a = {0} +-{1}, og lambda = {2}+-{3} d",a,Delta_a,lambda,Delta_lambda);
 
     matrix sigma = fit.Item3;
     
 
-    System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out-tydata.txt",append:false);
+    System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out.tydata.txt",append:false);
         for(int i=0;i<y.size;i++){
             outputfile.WriteLine("{0} {1} {2}",t[i],y[i],dy[i]);
         }

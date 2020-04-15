@@ -26,7 +26,7 @@ static void Main(){
 
 
 
-    System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out-tydata.txt",append:false);
+    System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out.tydata.txt",append:false);
         for(int i=0;i<y.size;i++){
             outputfile.WriteLine("{0} {1} {2}",t[i],y[i],dy[i]);
         }

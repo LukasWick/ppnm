@@ -1,0 +1,29 @@
+
+∫01 dx 4√(1-x²) = π = 3.14159265358979
+Numerical integration: 3.14159265769177
+Calculated error: 7.44697172953256E-06
+Actual error:     4.10197920075461E-09
+
+∫-inf,inf dx exp(-x²) = √π = 1.77245385090552
+My integration: 1.77269010023488
+My error:       0.000236249329365279
+My #calls:      72
+o8av integration: 1.7726940024867
+o8av error:       0.000240151581187398
+o8av #calls:      48
+
+∫0,inf dx 1/(1+x²) = π/2 = 1.5707963267949
+My integration: 1.57087236410369
+My error:       7.60373087900224E-05
+My #calls:      24
+o8av integration: 1.57048346639314
+o8av error:       0.000312860401757042
+o8av #calls:      16
+
+∫-inf,0 dx  1/(1+x²) = π/2 = 1.5707963267949
+My integration: 1.57087236410369
+My error:       7.60373087900224E-05
+My #calls:      24
+o8av integration: 1.57048346639314
+o8av error:       0.000312860401757042
+o8av #calls:      16

@@ -31,6 +31,10 @@ public class qspline {
 		if (z < x[0] || z > x[x.size - 1]) {
 			throw new System.ArgumentException ($"z = {z} is out of range x form {x[0]} to {x[x.size - 1]}", "z");
 		}
+		if(x[x.size - 1]==z){
+			return y[x.size - 1];
+		}
+
 		int i = 0, j = x.size - 1;
 		while (j - i > 1) {
 			int m = (i + j) / 2;

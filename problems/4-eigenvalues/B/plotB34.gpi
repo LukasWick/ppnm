@@ -1,0 +1,12 @@
+set term svg font "Arial,20" size 1024,600 background rgb "white"
+set out "plotB34.svg"
+set xlabel "n"
+set ylabel "log(t/[ms])"
+set title "Evaluation time"
+set key top left
+
+plot "out.plotB34.txt" using ($1):($2) with lines title "cyclic"\
+,"out.plotB34.txt" using ($1):($4) with lines title "value by value fully"\
+,"out.plotB34.txt" using ($1):($3) with lines title "value by value first eigenvalue"
+
+

@@ -4,5 +4,5 @@ set xlabel "t"
 set ylabel "y"
 set rmargin 0
 set title "Least square fit"
-plot "out-tydata.txt" with points pointtype 7 title "data"\
+plot "out.tydata.txt" with points pointtype 7 title "data"\
 ,"out.plot.txt" using ($1):($2) with lines title "fit"\
