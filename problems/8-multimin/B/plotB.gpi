@@ -1,0 +1,9 @@
+set term svg font "Arial,20" size 1024,600 background rgb "white"
+set out "plotB.svg"
+set xlabel "E [GeV]"
+set ylabel "σ"
+set rmargin 0
+set title "Higgs mass: fit"
+plot "higgs_data.txt" using ($1):($2):($3) with yerrorbars title "data"\
+,"out.fitfun.txt" using ($1):($2) with lines title "fit"
+

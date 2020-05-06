@@ -1,0 +1,22 @@
+
+Test function f(x,y)=(1-x)^2+100(y-x^2)^2, min at 1,1
+Numericaly found min x       : [1.000 1.000 ]
+Exact min x                  : [1.000 1.000 ]
+Function value at min        : 5.64559240579088E-09
+Gradient tollerence          : 0.0001
+Actual gradient              : 7.89080963789281E-05
+Actual error                 : 5.64559240579088E-09
+Error                        : 5.64559240579088E-09
+Number of steps              : 72
+
+
+Test function f(x,y)=(x^2+y-11)^2+(x+y^2-7)^2, min at 3,2
+Numericaly found min x       : [3.000 2.000 ]
+Exact min x                  : [3.000 2.000 ]
+Function value at min        : 2.01152184642748E-11
+Gradient tollerence          : 0.0001
+Actual gradient              : 6.58045343208448E-05
+Actual error                 : 2.01152184642748E-11
+Error                        : 2.01152184642748E-11
+Number of steps              : 21
+

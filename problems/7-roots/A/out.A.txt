@@ -1,0 +1,16 @@
+Test function f(x)=x^2-4, root = +-2 (only looking for 2)
+Numericaly found root        : [2.000 ]
+Exact root                   : [2.000 ]
+Function value at root       : [0.000 ]
+Error goal                   : 0.001
+Actual error (norm at rooot) : 0.000316063460241267
+Number of func call          : 13
+
+Test function extreem of Rosenbrock's valley function
+Numericaly found root        : [1.000 1.000 ]
+Exact root                   : [1.000 1.000 ]
+Function value at root       : [0.000 0.000 ]
+Error goal                   : 0.001
+Actual error (norm at rooot) : 1.61566866257416E-06
+Number of func call          : 418
+

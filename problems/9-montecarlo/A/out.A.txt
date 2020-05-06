@@ -1,0 +1,21 @@
+
+ ∫0π dx  ∫0π dy sin(x)*sin(y). With N = 1000000
+Numerical integration  : 4.0122860606254
+Analytical integration : 4
+Error estimate         : 0.00288780338605687
+Actual error           : 0.0122860606254029
+
+Integral of circle with radius 1.14471424255333. With N = 1000000
+Numerical integration  : 3.13145534450187
+Analytical integration : 3.14159265358979
+Error estimate         : 0.00206886287348254
+Actual error           : 0.0101373090879209
+
+ Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
+With N = 1000000
+Numerical integration  : 1.35970919071057
+Analytical integration : 1.39320392968568
+As it is a difficult singular integral
+We expect the errors to be large
+Error estimate         : 0.00303216810820213
+Actual error           : 0.0334947389751052

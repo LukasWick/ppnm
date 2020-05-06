@@ -61,7 +61,6 @@ public partial class ode_integrator{
         for(int i = 0; i<y.size;i++){
             yh[i] = ys[ys.Count-1][i];
         }
-
         return yh;
     }
 
@@ -116,10 +115,10 @@ public partial class ode_integrator{
 	double acc,                   /* absolute accuracy goal */
 	double eps                    /* relative accuracy goal */
     ){ /* return y(b) */
+
         List<double> ts_found= new List<double>();
         List<vector> ys_found = new List<vector>();
         driver(f,ts[0], y, ts[-1],h, acc,eps,ts_found,ys_found); //ts[-1] is last elemnt in vector
-
         vector[] ys_vectors = new vector[y.size];
 
         vector ts_vector =  new vector(ts_found.Count);

@@ -105,7 +105,8 @@ public double dot(vector o){
 
 public double norm(){
 	double meanabs=0;
-	for(int i=0;i<size;i++)meanabs+=this[i];
+	for(int i=0;i<size;i++)meanabs+=Abs(this[i]);
+	if(meanabs==0)meanabs=1;
 	meanabs/=size;
 	double sum=0;
 	for(int i=0;i<size;i++)sum+=(this[i]/meanabs)*(this[i]/meanabs);

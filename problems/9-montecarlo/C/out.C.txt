@@ -1,0 +1,16 @@
+
+ ∫0π dx  ∫0π dy sin(x)*sin(y). 
+Numerical integration   : 3.95588330650251
+Analytical integration  : 4
+Error estimate          : NaN
+Actual error            : 0.0441166934974855
+Number of function calls: 8148
+
+Integral of circle with radius 1.14471424255333.
+Numerical integration  : 3.12357612270662
+Analytical integration : 3.14159265358979
+Error estimate         : NaN
+Actual error           : 0.0180165308831746
+Number of function calls: 7980
+
+Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).

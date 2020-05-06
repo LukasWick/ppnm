@@ -1,0 +1,37 @@
+set term svg font "Arial,20" size 1024*2,600*3 background rgb "white"
+set out "plotC.svg"
+set title ""
+set key top right
+set multiplot layout 3,2 title "First radial bound state of hydrogen atom found with the shooting method" 
+set title "Solution 0"
+plot "out.plotC.txt" using 1:2 title "f_{exact}"\
+, "out.plotC.txt" using 1:3 with lines title "f_{found}"
+set xlabel "r"
+set ylabel "f"
+#
+set title "Solution  r*exp(-kr)"
+plot "out.plotC.txt" using 1:2 title "f_{exact}"\
+, "out.plotC.txt" using 1:4 with lines title "f_{found}"
+set xlabel "r"
+set ylabel "f"
+#
+set title "Residual 0"
+plot "out.plotC.txt" using 1:($2-$3) with lines title "f_{exact}"
+set xlabel "r"
+set ylabel "\delta f"
+#
+set title "Residual  r*exp(-kr)"
+plot "out.plotC.txt" using 1:($2-$4) with lines title "f_{exact}"
+set xlabel "r"
+set ylabel "\delta f"
+#
+set title "Energy 0"
+plot "out.plotC.E.txt"  using 1:3 with lines title "E"
+set xlabel "rmax"
+set ylabel "Found energy"
+#
+set title "Energy  r*exp(-kr)"
+plot "out.plotC.E.txt" using 1:4 with lines title "E"
+set xlabel "rmax"
+set ylabel "Found energy"
+#
