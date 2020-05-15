@@ -1,0 +1,8 @@
+set term svg font "Arial,20" size 1024,600 background rgb "white"
+set out "plotA.svg"
+set xlabel "x"
+set ylabel "y"
+set rmargin 0
+set title "Neural network solve differential equation"
+plot "out.tabfun.sin.txt" using ($1):($2) title "tabulated function"\
+,"out.fitfun.sin.txt" using ($1):($2) with lines title "interpolation"

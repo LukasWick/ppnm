@@ -6,4 +6,3 @@ set rmargin 0
 set title "Higgs mass: fit"
 plot "higgs_data.txt" using ($1):($2):($3) with yerrorbars title "data"\
 ,"out.fitfun.txt" using ($1):($2) with lines title "fit"
-

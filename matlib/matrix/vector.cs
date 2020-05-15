@@ -63,7 +63,10 @@ public static vector operator+(vector v, double a){
 public static vector operator+(double a, vector v){
 	return v+a; }
 
-
+public static vector operator-(double a, vector v){
+	return v+(-a); }
+public static vector operator-(vector v,double a){
+	return v+(-a); }
 public static vector operator-(vector v, vector u){
 	vector r=new vector(v.size);
 	for(int i=0;i<r.size;i++)r[i]=v[i]-u[i];
@@ -144,6 +147,11 @@ public static vector pow(vector v,int n){return pow(v,(double)n); }
 
 public static vector sqrt(vector v){
 	return pow(v,1.0/2);
+}
+public static double sum(vector v){
+	double s = 0;
+	for(int i=0;i<v.size;i++)s+=v[i];
+	return s; 
 }
 
 public static vector abs(vector v){
