@@ -1,0 +1,43 @@
+set term cairolatex input size 8*0.8,4
+set out "plotSin.tex"
+set size ratio -1
+set size square
+
+set key bottom left
+set yrange [0.000005:2]
+set multiplot layout 1,2 
+
+set xlabel "N"
+set ylabel "Error"
+set log x;
+set log y;
+set title "Error"
+
+a1 = 0.5
+b1 = 1
+a2 = 0.5
+b2 = 1
+a3 = 0.5
+b3 = 1
+
+f(x) = b1 - a1*x
+g(x) = b2 - a2*x
+h(x) = b3 - a3*x
+set fit quiet
+fit f(x) "out.plot.PHL.SimpleSin.data" using (log10($1)):(log10($4)) via b1,a1
+fit g(x) "out.plot.PHL.SimpleSin.data" using (log10($1)):(log10($6)) via b2,a2
+fit h(x) "out.plot.PHL.SimpleSin.data" using (log10($1)):(log10($8)) via b3,a3
+
+plot "out.plot.PHL.SimpleSin.data" using ($1):($4) pt 7 ps 0.4 lc  rgb "red" title "Plain"\
+,"out.plot.PHL.SimpleSin.data" using ($1):($6) pt 7 ps 0.4 lc  rgb "orange" title "Halton"\
+,"out.plot.PHL.SimpleSin.data" using ($1):($8) pt 7 ps 0.4 lc  rgb "green" title "Lattice"\
+,"out.plot.PHL.SimpleSin.data" using ($1):(10**(f(log10($1)))) with lines lt 3 lc rgb "red" lw 3 title sprintf ("FitP :a:{%.2f}",a1) \
+,"out.plot.PHL.SimpleSin.data" using ($1):(10**(g(log10($1)))) with lines lt 3 lc rgb "orange" lw 3 title sprintf ("FitH :a:{%.2f}",a2) \
+,"out.plot.PHL.SimpleSin.data" using ($1):(10**(h(log10($1)))) with lines lt 3 lc rgb "green" lw 3 title sprintf ("FitL :a:{%.2f}",a3) \
+#
+set title "Estimated Error "
+set xlabel "N"
+set ylabel "Error [\sigma]"
+plot "out.plot.PHL.SimpleSin.data" using ($1):($3) pt 7 ps 0.4 lc  rgb "red" title "Plain"\
+,"out.plot.PHL.SimpleSin.data" using ($1):($5) pt 7 ps 0.4 lc  rgb "orange" title "Halton"\
+,"out.plot.PHL.SimpleSin.data" using ($1):($7) pt 7 ps 0.4 lc  rgb "green" title "Lattice"\

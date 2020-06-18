@@ -49,7 +49,7 @@ public partial class minimization{
 			    break;
 			}
             if(numSteps==maxStep){
-			    Error.Write($"SR1: Ended after maxsteps = {0}\n",maxStep);
+			    Error.Write($"SR1: Ended after maxsteps = {maxStep}\n");
 			}
 
             lam = 1.0;

@@ -5,7 +5,7 @@ plotC.svg: plotC.gpi out.solvedFun.sin.txt
 	gnuplot plotC.gpi
 
 out.solvedFun.sin.txt: mainC.exe
-	mono $< 
+	mono $< 1> log.txt
 
 mainC.exe: mainC.cs matlib.dll
 	mcs $< -reference:$(lastword $^) -out:$@
@@ -21,4 +21,4 @@ matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.exe *.dll *.svg
+	$(RM) out* *.exe *.dll *.svg 

@@ -14,7 +14,7 @@ out-eulerSpiral.txt: main.exe
 
 
 
-LIBDIR = ../../matlib
+LIBDIR = ../../../matlib
 SRC :=$(LIBDIR)/matrix/vector.cs
 SRC +=$(LIBDIR)/integration/quado8.cs
 matlib.dll:  eulerSpiral.cs $(SRC)
@@ -22,4 +22,4 @@ matlib.dll:  eulerSpiral.cs $(SRC)
 
 
 clean:
-	$(RM) *.log *.aux *.pdf *.dvi out* *.txt *.exe *.eps *.exe *.dll plot-*.tex
+	$(RM) *.log *.aux *.pdf *.dvi out* *.txt *.exe *.eps *.dll plot-*.tex *.out

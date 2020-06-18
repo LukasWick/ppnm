@@ -1,0 +1,168 @@
+
+
+*******************************************************************************
+Thu Jun 18 15:51:00 2020
+
+
+FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
+        format = x:z
+        #datapoints = 58
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = b1 - a1*x
+fitted parameters initialized with current variable values
+
+   3 1.5341144379e+01  -3.47e-06  1.00e-03   -3.636509e-02
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 15.3411
+rel. change during last iteration : -3.46646e-11
+
+degrees of freedom    (FIT_NDF)                        : 57
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.51879
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.269143
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = -0.0363651       +/- 0.06812      (187.3%)
+
+
+*******************************************************************************
+Thu Jun 18 15:51:45 2020
+
+
+FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
+        format = x:z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = b1 - a1*x
+fitted parameters initialized with current variable values
+
+   3 1.1735899734e+01  -3.71e-06  1.00e-03    1.323302e-02
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 11.7359
+rel. change during last iteration : -3.71499e-11
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.445997
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.198914
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 0.013233         +/- 0.05758      (435.1%)
+
+
+*******************************************************************************
+Thu Jun 18 15:53:19 2020
+
+
+FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
+        format = x:z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = b1 - a1*x
+fitted parameters initialized with current variable values
+
+   3 7.7394414613e+00  -4.47e-06  1.00e-03    1.205171e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 7.73944
+rel. change during last iteration : -4.47497e-11
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.362184
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.131177
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 0.120517         +/- 0.04676      (38.8%)
+
+
+*******************************************************************************
+Thu Jun 18 15:53:44 2020
+
+
+FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
+        format = x:z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = b1 - a1*x
+fitted parameters initialized with current variable values
+
+   3 7.7394414613e+00  -4.47e-06  1.00e-03    1.205171e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 7.73944
+rel. change during last iteration : -4.47497e-11
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.362184
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.131177
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 0.120517         +/- 0.04676      (38.8%)
+
+
+*******************************************************************************
+Thu Jun 18 15:54:01 2020
+
+
+FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
+        format = x:z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = b1 - a1*x
+fitted parameters initialized with current variable values
+
+   3 7.7394414613e+00  -4.47e-06  1.00e-03    1.205171e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 7.73944
+rel. change during last iteration : -4.47497e-11
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.362184
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.131177
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 0.120517         +/- 0.04676      (38.8%)
+
+
+*******************************************************************************
+Thu Jun 18 15:54:38 2020
+
+
+FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
+        format = x:z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = b1 - a1*x
+fitted parameters initialized with current variable values
+
+   3 8.3634260850e+00  -4.20e-06  1.00e-03    1.138167e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 8.36343
+rel. change during last iteration : -4.20444e-11
+
+degrees of freedom    (FIT_NDF)                        : 59
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.376501
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.141753
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 0.113817         +/- 0.04861      (42.71%)

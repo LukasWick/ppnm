@@ -7,11 +7,11 @@ using System.Collections.Generic;
 class main{
 static void Main(){
     
-    nnde network = new nnde(2);
+    nnde network = new nnde(5);
 
-    Func<double,double,double,double,double> phi = (x,y,ym,ymm) =>y-ymm;
+    Func<double,double,double,double,double> phi = (x,y,ym,ymm) =>y+ymm;
     double a = -PI,b=PI;
-    double c = -PI;
+    double c = 0;
     double yc = Sin(c); 
     double ymc = Cos(c); 
 
