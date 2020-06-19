@@ -9,21 +9,33 @@ class main{
 static void Main(){
 
     // Part A
-
-    WriteLine("Part 1: Test");
-	var A= new matrix("3 2 4;2 0 2;4 2 3");
+    var rnd = new Random();
+    var A = new matrix(3,3);
+    for(int i=0;i<A.size1;i++){
+        for(int j=i;j<A.size2;j++){
+            double rndnumber = 10*(rnd.NextDouble()-0.5); 
+            A[i,j]=rndnumber;
+            A[j,i]=rndnumber;
+        }
+    }
+	// var A= new matrix("3 2 4;2 0 2;4 2 3");
     // var A= new matrix("3 2 4;2 0 2;4 2 12");
     var V = new matrix(A.size1,A.size2);
-    A.print("A");
-    
+    WriteLine("\n\nPart 1: Test Jacobi diagonalization with cyclic sweeps");
+    WriteLine("Random symmetric matrix:");
+
+    A.print("A = ");
     matrix D = diag_cyclic_complete(A,V);
-    (V*D*V.T).print("VDVT");
-
-    V.print("V");
+    WriteLine("Do diagonalization with cyclic sweeps:");
+    WriteLine("Eigen values");
     D.print("D");
-
+    WriteLine("Eigenvectors:");
+    V.print("V");   
+    WriteLine("Test decomposition:");
+    (V*D*V.T).print("A=VDV^T");
+    WriteLine("Test eigen vectors:");
     (V.T*A*V).print("VTAV");
-    
+    WriteLine("\n\n");
     // part 2
     int n=100;
     double s=1.0/(n+1);
@@ -48,15 +60,16 @@ static void Main(){
 
 
     System.IO.StreamWriter outputfile_A_psi = new System.IO.StreamWriter("out.plotA.psi.txt",append:false);
-    double psi=0;
 
     for(int k=0;k<5;k++){
         outputfile_A_psi.WriteLine($"{0} {0} {0}");
         for(int i=0;i<n;i++){
             double factor=Sign(V[0,k])/Sqrt(s);
-            outputfile_A_psi.WriteLine($"{(i+1.0)/(n+1)} {V[i,k]*factor} {psi}");
+            double psi=V[i,k]*factor;
+            double x = (i+1.0)/(n+1);
+            outputfile_A_psi.WriteLine($"{x} {psi}");
         }
-        outputfile_A_psi.WriteLine($"{1} {0} {0}\n");
+        outputfile_A_psi.WriteLine($"{1} {0} \n");
 
 
         

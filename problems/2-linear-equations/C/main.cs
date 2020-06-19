@@ -1,18 +1,35 @@
 using static System.Console;
+using System;
 class main{
 static void Main(){
-    WriteLine("Test Givens:");
-    var A = new matrix("1 2 3;2 7 4;6 7 9");
+    var rnd = new Random();
+    var A = new matrix(3,3);
+    for(int i=0;i<A.size1;i++){
+        for(int j=0;j<A.size2;j++){
+            A[i,j]=10*(rnd.NextDouble()-0.5); 
+        }
+    }
+    var b = new vector(3);
+    for(int i=0;i<3;i++){
+        b[i]=10*(rnd.NextDouble()-0.5); 
+    }
+    WriteLine("\n\n");
+
+    WriteLine("C: Test QR-decomposition by Givens rotations:");
     var QR = A.copy();
     A.print("A = ");
 
     qr_givens.qr_givens_QR(QR);
+    WriteLine("QR-decomposition");
     QR.print("QR = ");
-
-    var b = new vector(5.0,6,4);
+    WriteLine("Random vector");
     b.print("b = ");
     qr_givens.qr_givens_solve(QR,b);
-    b.print("x=");
-    (A*b).print("Ax=");
+    WriteLine("Solve Ax = b:");
+    b.print("x = ");
+    WriteLine("Check result:");
+    (A*b).print("Ax= ");
+    WriteLine("\n\n");
+
 }
 }

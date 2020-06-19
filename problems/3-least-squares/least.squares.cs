@@ -11,6 +11,7 @@ public partial class least_squares{
     public least_squares(vector x, vector y, vector dy, Func<double,double>[] f){
         var A = new matrix(x.size,f.Length);
 
+        // Featuretransform scaled by uncertainty
         for(int i=0;i<x.size;i++){
             for(int j=0;j<f.Length;j++){
                 A[i,j] = f[j](x[i])/dy[i];

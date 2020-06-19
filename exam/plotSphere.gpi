@@ -37,7 +37,7 @@ plot "out.plot.PHL.Sphere.data" using ($1):($4) pt 7 ps 0.4 lc  rgb "red" title 
 #
 set title "Estimated Error "
 set xlabel "N"
-set ylabel "Error [\sigma]"
+set ylabel "Error"
 plot "out.plot.PHL.Sphere.data" using ($1):($3) pt 7 ps 0.4 lc  rgb "red" title "Plain"\
 ,"out.plot.PHL.Sphere.data" using ($1):($5) pt 7 ps 0.4 lc  rgb "orange" title "Halton"\
 ,"out.plot.PHL.Sphere.data" using ($1):($7) pt 7 ps 0.4 lc  rgb "green" title "Lattice"\

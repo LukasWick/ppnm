@@ -1,9 +1,9 @@
 set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotA.svg"
+set out "PlotA.svg"
 set xlabel "t [days]"
 set ylabel "Per-cent Activity"
 set rmargin 0
 set title "Rutherford and Soddy experiment: Least square fit"
-plot "out.tydata.txt" using ($1):($2):($3) with yerrorbars title "data"\
-,"out.plotA.txt" using ($1):($2) with lines title "fit"
+plot "out.tydata.data" using ($1):($2):($3) with yerrorbars title "data"\
+,"out.plotA.data" using ($1):($2) with lines title "fit"
 

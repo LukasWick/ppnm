@@ -29,17 +29,22 @@ static void Main(){
     double Delta_a = Exp(Delta_c[0]);
     double Delta_lambda = Delta_c[1];
 
-    System.IO.StreamWriter  outA = new System.IO.StreamWriter("outB.txt",append:false);
-    outA.WriteLine("Fit: a = {0} +-{1}, og lambda = {2}+-{3} 1/d",a,Delta_a,lambda,Delta_lambda);
-    outA.WriteLine("Falf life time: {0} +- {1} d",Log(2)/lambda,Delta_lambda*Log(2)/(lambda*lambda));
-    outA.WriteLine("Table value: 3.6319(23) d");
-    outA.Close();
+    System.IO.StreamWriter  outB = new System.IO.StreamWriter("OutAandB.txt",append:false);
+    outB.WriteLine("\n\nA&B:\nUncertainties of the fitting coefficients:");
+    outB.WriteLine("Fit of data to ln(y) = ln(a)*lamda*t");
+    outB.WriteLine("Fit: a = {0:F0} +-{1:F0}, og lambda = {2:F3}+-{3:F3} 1/d",a,Delta_a,lambda,Delta_lambda);
+    outB.WriteLine("Half life time: {0:F2} +- {1:F2} d",Log(2)/lambda,Delta_lambda*Log(2)/(lambda*lambda));
+    outB.WriteLine("Table value: 3.6319(23) d");
+    outB.WriteLine("Fit yield same value with one significant digit, but not within uncertainty.");
+
+
+    outB.Close();
 
 
     matrix sigma = fit.sigma;
     
 
-    System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out.tydata.txt",append:false);
+    System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out.tydata.data",append:false);
         for(int i=0;i<y.size;i++){
             outputfile.WriteLine("{0} {1} {2}",t[i],y[i],dy[i]);
         }
@@ -49,7 +54,7 @@ static void Main(){
     vector ts = vector.linspace(t[0],t[-1],200);
     double yfit,delta_y_plus_c0,delta_y_plus_c1,delta_y_minus_c0,delta_y_minus_c1;
 
-    System.IO.StreamWriter outputfile_fitA = new System.IO.StreamWriter("out.plotA.txt",append:false);
+    System.IO.StreamWriter outputfile_fitA = new System.IO.StreamWriter("out.plotA.data",append:false);
     
     for(int i=0;i<ts.size;i++){
             yfit = a*Exp(-lambda*ts[i]);
@@ -59,7 +64,7 @@ static void Main(){
     outputfile_fitA.Close();
 
 
-    System.IO.StreamWriter outputfile_fitC = new System.IO.StreamWriter("out.plotC.txt",append:false);
+    System.IO.StreamWriter outputfile_fitC = new System.IO.StreamWriter("out.plotC.data",append:false);
     for(int i=0;i<ts.size;i++){
             yfit = Exp(c[0]-c[1]*ts[i]);
             delta_y_plus_c0 = Exp(c[0]+Delta_c[0]-c[1]*ts[i]);

@@ -1,0 +1,22 @@
+
+
+
+C: Test QR-decomposition by Givens rotations:
+A = 
+    3.654     0.682     0.865 
+   -0.165     2.022     1.610 
+   -3.675     4.514     3.369 
+QR-decomposition
+QR = 
+    5.185    -2.784    -1.829 
+   -0.045     4.146     3.368 
+   -0.788     1.053     0.022 
+Random vector
+b = [1.417 4.237 -4.625 ]
+Solve Ax = b:
+x = [19.814 185.306 -228.098 ]
+Check result:
+Ax= [1.417 4.237 -4.625 ]
+
+
+

@@ -1,4 +1,14 @@
-A c transformed
+
+
+Question C:
+Random matrix
+A = 
+   -0.503    -0.779    -0.066     0.543     0.315 
+   -0.779    -0.134    -0.292     0.888    -0.797 
+   -0.066    -0.292     0.285    -0.943    -0.504 
+    0.543     0.888    -0.943    -0.360     0.980 
+    0.315    -0.797    -0.504     0.980     0.364 
+A cyclic transformed
    -0.503     0.000     0.000     0.000     0.000 
    -0.779    -0.134     0.000     0.000     0.000 
    -0.066    -0.292     0.285     0.000     0.000 
@@ -10,17 +20,18 @@ A classic transformed
    -0.066    -0.292     0.285     0.000     0.000 
     0.543     0.888    -0.943    -0.360     0.000 
     0.315    -0.797    -0.504     0.980     0.364 
-Eigenvalues calculated with cyclic:[-2.163 -0.574 -0.533 1.082 1.840 ]
-Eigenvalues calculated with classic:[-2.163 -0.574 -0.533 1.082 1.840 ]
-Eigenvectors calculated with cyclic:
+Eigenvalues calculated with cyclic       :  [-2.163 -0.574 -0.533 1.082 1.840 ]
+Eigenvalues calculated with classic:  [-2.163 -0.574 -0.533 1.082 1.840 ]
+Eigenvectors calculated with cyclic       : 
     0.397     0.696     0.437    -0.341     0.224 
     0.555     0.230    -0.285     0.747    -0.003 
    -0.095     0.466    -0.623    -0.313    -0.537 
    -0.634     0.433    -0.189     0.268     0.551 
     0.352    -0.241    -0.551    -0.395     0.599 
-Eigenvectors calculated with classic:
+Eigenvectors calculated with classic: 
     0.397    -0.696    -0.437    -0.341     0.224 
     0.555    -0.230     0.285     0.747    -0.003 
    -0.095    -0.466     0.623    -0.313    -0.537 
    -0.634    -0.433     0.189     0.268     0.551 
     0.352     0.241     0.551    -0.395     0.599 
+From fig PlotC.svg it can be seen that the classic version is sligthly faster

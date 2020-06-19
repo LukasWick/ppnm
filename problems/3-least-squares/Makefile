@@ -1,13 +1,13 @@
-all: plotA.svg outB.txt plotC.svg
-	cat outB.txt
+all: PlotA.svg OutAandB.txt PlotC.svg
+	cat OutAandB.txt
 
-plotC.svg: plotC.gpi out.plotC.txt
+PlotC.svg: plotC.gpi out.plotC.data out.tydata.data
 	gnuplot $<
 
-plotA.svg: plotA.gpi out.plotA.txt
+PlotA.svg: plotA.gpi out.plotA.data out.tydata.data
 	gnuplot $<
 
-outB.txt out.plotA.txt out.plotC.txt: main.exe
+OutAandB.txt out.plotA.data out.plotC.data out.tydata.data: main.exe
 	mono $< 
 
 main.exe: main.cs matlib.dll
@@ -22,4 +22,4 @@ matlib.dll: least.squares.cs  $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.txt *.exe *.dll *.svg
+	$(RM) out* *.txt *.exe *.dll *.svg *.data

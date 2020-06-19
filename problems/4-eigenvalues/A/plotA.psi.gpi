@@ -3,7 +3,7 @@ set out "plotA.psi.svg"
 set xlabel "t"
 set ylabel "y"
 set rmargin 0
-set title "Eigen functions"
+set title "Eigen functions of hamilton"
 plot "out.plotA.psi.txt" using ($1):($2) with lines title ""\
 ,sqrt(2) with lines\
 ,-sqrt(2) with lines

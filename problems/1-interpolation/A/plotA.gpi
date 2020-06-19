@@ -1,5 +1,5 @@
 set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotA.svg"
+set out "PlotA.svg"
 set xlabel "x"
 set ylabel "y"
 set rmargin 0

@@ -1,0 +1,9 @@
+
+
+A&B:
+Uncertainties of the fitting coefficients:
+Fit of data to ln(y) = ln(a)*lamda*t
+Fit: a = 142 +-1, og lambda = 0.171+-0.004 1/d
+Half life time: 4.04 +- 0.08 d
+Table value: 3.6319(23) d
+Fit yield same value with one significant digit, but not within uncertainty.

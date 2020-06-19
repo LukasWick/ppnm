@@ -9,7 +9,7 @@ class main{
 static void Main(){
   
     // Part B
-    System.IO.StreamWriter outputfile_B = new System.IO.StreamWriter("out.plotB1.txt",append:false);
+    System.IO.StreamWriter outputfile_B = new System.IO.StreamWriter("out.plotB1.data",append:false);
     var rnd = new Random(1);
     var N = 100;
     var n0 = 15;
@@ -23,11 +23,12 @@ static void Main(){
                 Arnd[j,i]=Arnd[i,j];
             }
         }
+        vector d = new vector(Arnd.size1);
         sw.Start();
-        vector e = diag_cyclic(Arnd,v);
+        diag_cyclic(Arnd,v,d);
         sw.Stop();
 
-        outputfile_B.WriteLine("{0} {1} {2}",Log(n),Log(sw.ElapsedMilliseconds),3*(Log(n)-Log(n0)));
+        outputfile_B.WriteLine("{0} {1} {2}",n,sw.ElapsedMilliseconds,Pow(10,3*(Log10(n)-Log10(n0))));
 
     }
     outputfile_B.Close();
