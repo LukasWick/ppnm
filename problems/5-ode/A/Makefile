@@ -1,16 +1,17 @@
-all: plotA1.svg plotA2.svg plotA3.svg
+all: PlotA1.svg PlotA2.svg PlotA3.svg OutA.txt
+	cat OutA.txt
 
-plotA1.svg: plotA1.gpi out.plotA1.txt
+PlotA1.svg: plotA1.gpi out.plotA1.data
 	gnuplot $<
 
-plotA2.svg: plotA2.gpi out.plotA2.txt
+PlotA2.svg: plotA2.gpi out.plotA2.data
 	gnuplot $<
 
-plotA3.svg: plotA3.gpi out.plotA3.txt
+PlotA3.svg: plotA3.gpi out.plotA3.data
 	gnuplot $<
 
-out.plotA1.txt out.plotA2.txt out.plotA3.txt: mainA.exe
-	mono $< > out.plotA1.txt
+OutA.txt out.plotA1.data out.plotA2.data out.plotA3.data: mainA.exe
+	mono $< >OutA.txt
 
 mainA.exe: main.cs matlib.dll
 	mcs $< -reference:$(lastword $^) -out:$@
@@ -25,4 +26,4 @@ matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.exe *.dll *.svg
+	$(RM) out* *.exe *.dll *.svg *.data

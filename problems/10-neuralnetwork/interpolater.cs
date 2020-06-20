@@ -67,7 +67,6 @@ public partial class  ann {
 	public double derivative(double x){
         double y = 0;
         for(int i=0;i<n;i++){
-            // y += -2*(x-param[i*3])/(Pow(param[i*3+1],2))*param[i*3+2]* f((x-param[i*3])/param[i*3+1]);
             double a=param[3*i+0];
             double b=param[3*i+1];
             double w=param[3*i+2];
@@ -79,23 +78,13 @@ public partial class  ann {
     public double antiderivative(double x,double x0){
         double y = 0;
         for(int i=0;i<n;i++){
-            // double erf1 = erf((x0-param[i*3])/param[i*3+1]);
-            // double erf2 = erf((x-param[i*3])/param[i*3+1]);
-            // y += param[i*3+1]*param[i*3+2]*Sqrt(PI)/2*(-erf1+erf2);
             double a=param[3*i+0];
             double b=param[3*i+1];
             double w=param[3*i+2];
             y += w*F((x-a)/b)*b-w*F((x0-a)/b)*b;
         }
         return y;
-    // }
-    // public static double erf(double x){
-    //     /// single precision error function (Abramowitz and Stegun, from Wikipedia)
-    //     if(x<0) return -erf(-x);
-    //     double[] a={0.254829592,-0.284496736,1.421413741,-1.453152027,1.061405429};
-    //     double t=1/(1+0.3275911*x);
-    //     double sum=t*(a[0]+t*(a[1]+t*(a[2]+t*(a[3]+t*a[4]))));/* the right thing */
-    // return 1-sum*Exp(-x*x);
+ 
     } 
 
 

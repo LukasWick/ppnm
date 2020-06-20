@@ -8,6 +8,7 @@ class main{
     static private Func<double,vector,vector> diff(vector param){
        return (X,Y)=> diffExplesit(X,Y,param);
     }
+    // Differential equation of 3 body system
     static private vector diffExplesit(double t,vector Y, vector param){
         // Y = [r1x,r1y,r1x',r1y',r2x,r2y,r2x',r2y',r3x,r3y,r4x',r5y']
         // i = [ 0 , 1 ,  2 ,  3 , 4 , 5 , 6  , 7  , 8 , 9 , 10 , 11 ]

@@ -139,7 +139,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(572.4,52.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Neural network interpolation</tspan></text>
+		<text><tspan font-family="Arial" >Neural network solving differential equation y''=-y</tspan></text>
 	</g>
 </g>
 	<g id="gnuplot_plot_1" ><title>solvedFun</title>

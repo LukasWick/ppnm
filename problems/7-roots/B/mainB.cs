@@ -27,12 +27,17 @@ static void Main(){
     vector e0 = new vector(-1.0);
     vector e_found = newton(M,e0,epsilon);
     vector e_exact = new vector(-1.0/2);
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question B\n Bound states of hydrogen atom with shooting method for boundary value problems");
+    WriteLine("See plot in PlotB.svg");
+
+
     WriteLine("First Bound states of hydrogen atom found with the shooting method");
     e_found.print("Numericaly found root        : ");
     e_exact.print("Exact root                   : ");
     WriteLine("Error goal                   : {0}",epsilon);
     WriteLine("Actual error (norm at rooot) : {0}",M(e_found).norm());    
-    WriteLine("");
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 
 

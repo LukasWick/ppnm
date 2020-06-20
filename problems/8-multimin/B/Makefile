@@ -1,10 +1,11 @@
-all: out.B.txt plotB.svg
-	cat out.B.txt
+all: OutB.txt plotB.svg
+	cat OutB.txt
+
 plotB.svg: plotB.gpi out.fitfun.txt
 	gnuplot plotB.gpi
 
 
-out.B.txt out.fitfun.txt: mainB.exe
+OutB.txt out.fitfun.txt: mainB.exe
 	mono $< >$@
 
 mainB.exe: mainB.cs matlib.dll

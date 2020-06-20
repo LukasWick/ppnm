@@ -1,7 +1,6 @@
-all: plotC.svg
+all: PlotC.svg
 
-
-plotC.svg: plotC.gpi out.solvedFun.sin.txt 
+PlotC.svg: plotC.gpi out.solvedFun.sin.txt 
 	gnuplot plotC.gpi
 
 out.solvedFun.sin.txt: mainC.exe

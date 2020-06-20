@@ -11,9 +11,8 @@ static void Main(){
     }
     var Q = A.copy();
     var R = new matrix(Q.size2,Q.size2);
-    WriteLine("\n\n");
-
-    WriteLine("B: Matrix inverse by Gram-Schmidt QR factorization");
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question B:\nMatrix inverse by Gram-Schmidt QR factorization");
     WriteLine("Random matrix");
 	A.print("A = ");
     qr_gs.qr_gs_decomp(Q,R);
@@ -28,7 +27,7 @@ static void Main(){
     WriteLine("Product should give identity");
 
     (A*B).print("I=AB=");
-    WriteLine("\n\n");
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 }
 }

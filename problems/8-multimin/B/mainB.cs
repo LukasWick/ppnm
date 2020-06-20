@@ -31,13 +31,15 @@ static void Main(){
     double epsilon = 1e-7;
     vector param = new vector(120,4.83,20);
     int num_of_steps = qnewton(chiSquared,ref param,epsilon);
-    WriteLine("");
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question A\n Higgs discovery");
     WriteLine("Fit of higgs mass:");
     WriteLine("m = {0}, Γ = {1}, A = {2}",param[0],param[1],param[2]);
     WriteLine("Expected mass: {0}", 125.3);
     WriteLine("Number of steps              : {0}",num_of_steps);
-    WriteLine("");
-    
+    WriteLine("See fit in PlotB.svg");
+    WriteLine("__________________________________________________________________________________________________________\n");
+
     System.IO.StreamWriter  outputfile = new System.IO.StreamWriter("out.fitfun.txt",append:false);
     vector Es = linspace(101,159,400);
     for(int i = 0; i<400;i++)

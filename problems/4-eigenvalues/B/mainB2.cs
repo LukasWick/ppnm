@@ -144,7 +144,7 @@ static void Main(){
         WriteLine("Change both signs in the atan2. When the first parameter is zero this gives pi instead of 0, wich makes it sort in the opposite direction");
         e_lowest.print("D sorted by lowest first:  ");
         e_highest.print("D sorted by highest first: ");
-
+        WriteLine("\n\n");
 
 }
 }

@@ -1,12 +1,12 @@
-all: out.B.txt plotB.svg
-	cat out.B.txt
+all: OutB.txt PlotB.svg
+	cat OutB.txt
 
 
-plotB.svg: plotB.gpi out.plotB.txt
+PlotB.svg: plotB.gpi out.plotB.txt
 	gnuplot $<
 
-out.B.txt out.plotB.txt: mainB.exe
-	mono $< > out.B.txt
+OutB.txt out.plotB.txt: mainB.exe
+	mono $< >$@
 
 mainB.exe: mainB.cs matlib.dll
 	mcs $< -reference:$(lastword $^) -out:$@

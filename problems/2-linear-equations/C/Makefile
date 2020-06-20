@@ -1,7 +1,7 @@
-all: outC.txt
+all: OutC.txt
 	cat  $<
 
-outC.txt: main.exe
+OutC.txt: main.exe
 	mono $< > $@
 
 main.exe: main.cs matlib.dll

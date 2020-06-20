@@ -1,8 +1,23 @@
 
+__________________________________________________________________________________________________________
+Question C
+ Infinite limits
+Tested on different integrals
+First test error:
+
 ∫01 dx 4√(1-x²) = π = 3.14159265358979
 Numerical integration: 3.14159265769177
 Calculated error: 7.44697172953256E-06
 Actual error:     4.10197920075461E-09
+
+ Testing opposite limits:
+∫10 dx 4√(1-x²) = -π = 3.14159265358979.
+With clenshaw curtis: -3.14159265355524
+Called function 0 times
+Without clenshaw curtis: -3.14159265769177
+Called function 0 times
+
+ Testing infinite  limits:
 
 ∫-inf,inf dx exp(-x²) = √π = 1.77245385090552
 My integration: 1.77269010023488
@@ -27,3 +42,5 @@ My #calls:      24
 o8av integration: 1.57048346639314
 o8av error:       0.000312860401757042
 o8av #calls:      16
+__________________________________________________________________________________________________________
+

@@ -1,0 +1,12 @@
+
+__________________________________________________________________________________________________________
+Question B
+ Bound states of hydrogen atom with shooting method for boundary value problems
+See plot in PlotB.svg
+First Bound states of hydrogen atom found with the shooting method
+Numericaly found root        : [-0.500 ]
+Exact root                   : [-0.500 ]
+Error goal                   : 0.0001
+Actual error (norm at rooot) : 6.00811108328906E-05
+__________________________________________________________________________________________________________
+

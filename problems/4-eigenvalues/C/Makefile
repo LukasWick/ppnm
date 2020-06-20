@@ -1,10 +1,10 @@
-all: PlotC.svg Out.C.txt 
-	cat Out.C.txt
+all: PlotC.svg OutC.txt 
+	cat OutC.txt
 
-PlotC.svg: PlotC.gpi out.plotC.time.data out.plotC.rotations.data
+PlotC.svg: plotC.gpi out.plotC.time.data out.plotC.rotations.data
 	gnuplot $<
 
-Out.C.txt out.plotC.time.data out.plotC.rotations.data: mainC.exe
+OutC.txt out.plotC.time.data out.plotC.rotations.data: mainC.exe
 	mono $< > $@
 
 mainC.exe: mainC.cs matlib.dll

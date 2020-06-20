@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2020.6.18)  18 JUN 2020 16:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2020.6.18)  20 JUN 2020 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -355,11 +355,11 @@ re-spec-tively pseudo-
 \gptboxwidth=\skip48
 \gptboxtext=\box30
 Package epstopdf Info: Source file: <plotCircle.eps>
-(epstopdf)                    date: 2020-06-18 16:13:12
-(epstopdf)                    size: 101665 bytes
+(epstopdf)                    date: 2020-06-20 13:30:32
+(epstopdf)                    size: 101380 bytes
 (epstopdf)             Output file: <plotCircle-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-06-18 16:13:14
-(epstopdf)                    size: 14630 bytes
+(epstopdf)                    date: 2020-06-20 13:30:34
+(epstopdf)                    size: 14620 bytes
 (epstopdf)             Command: <repstopdf --outfile=plotCircle-eps-converted-t
 o.pdf plotCircle.eps>
 (epstopdf)             \includegraphics on input line 174.
@@ -377,11 +377,11 @@ Package pdftex.def Info: plotCircle-eps-converted-to.pdf used on input line 174
 (pdftex.def)             Requested size: 578.15858pt x 289.07928pt.
 ) (./plotSphere.tex
 Package epstopdf Info: Source file: <plotSphere.eps>
-(epstopdf)                    date: 2020-06-18 16:13:12
-(epstopdf)                    size: 97464 bytes
+(epstopdf)                    date: 2020-06-20 13:30:32
+(epstopdf)                    size: 97241 bytes
 (epstopdf)             Output file: <plotSphere-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-06-18 16:13:15
-(epstopdf)                    size: 14537 bytes
+(epstopdf)                    date: 2020-06-20 13:30:34
+(epstopdf)                    size: 14591 bytes
 (epstopdf)             Command: <repstopdf --outfile=plotSphere-eps-converted-t
 o.pdf plotSphere.eps>
 (epstopdf)             \includegraphics on input line 174.
@@ -403,11 +403,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./plotSin.tex
 Package epstopdf Info: Source file: <plotSin.eps>
-(epstopdf)                    date: 2020-06-18 16:13:12
-(epstopdf)                    size: 97412 bytes
+(epstopdf)                    date: 2020-06-20 13:30:32
+(epstopdf)                    size: 97417 bytes
 (epstopdf)             Output file: <plotSin-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-06-18 16:13:16
-(epstopdf)                    size: 14589 bytes
+(epstopdf)                    date: 2020-06-20 13:30:35
+(epstopdf)                    size: 14573 bytes
 (epstopdf)             Command: <repstopdf --outfile=plotSin-eps-converted-to.p
 df plotSin.eps>
 (epstopdf)             \includegraphics on input line 174.
@@ -433,11 +433,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./plotHard.tex
 Package epstopdf Info: Source file: <plotHard.eps>
-(epstopdf)                    date: 2020-06-18 16:13:13
-(epstopdf)                    size: 101466 bytes
+(epstopdf)                    date: 2020-06-20 13:30:32
+(epstopdf)                    size: 101273 bytes
 (epstopdf)             Output file: <plotHard-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-06-18 16:13:17
-(epstopdf)                    size: 14938 bytes
+(epstopdf)                    date: 2020-06-20 13:30:36
+(epstopdf)                    size: 14954 bytes
 (epstopdf)             Command: <repstopdf --outfile=plotHard-eps-converted-to.
 pdf plotHard.eps>
 (epstopdf)             \includegraphics on input line 174.
@@ -491,7 +491,7 @@ type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb>
-Output written on doc.pdf (4 pages, 163913 bytes).
+Output written on doc.pdf (4 pages, 163979 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream

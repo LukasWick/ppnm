@@ -1,3 +1,7 @@
+
+__________________________________________________________________________________________________________
+Question A
+ Newton's method with numerical Jacobian and back-tracking linesearch
 Test function f(x)=x^2-4, root = +-2 (only looking for 2)
 Numericaly found root        : [2.000 ]
 Exact root                   : [2.000 ]
@@ -13,4 +17,5 @@ Function value at root       : [0.000 0.000 ]
 Error goal                   : 0.001
 Actual error (norm at rooot) : 1.61566866257416E-06
 Number of func call          : 418
+__________________________________________________________________________________________________________
 

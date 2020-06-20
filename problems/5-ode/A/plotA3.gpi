@@ -1,9 +1,9 @@
 set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotA3.svg"
+set out "PlotA3.svg"
 set xlabel "t"
 set ylabel "sin(t)"
 set title "Integrate sin with RK12 stepper. Using Q spline between points."
 set key top right
-plot "out.plotA3.txt" using ($1):($2) title "integral"\
+plot "out.plotA3.data" using ($1):($2) title "integral"\
 ,sin(x) with lines title "exact"
 

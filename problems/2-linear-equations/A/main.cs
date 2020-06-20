@@ -10,10 +10,11 @@ static void Main(){
             A[i,j]=10*(rnd.NextDouble()-0.5); 
         }
     }
-    WriteLine("\n\n");
-    WriteLine("A: Solving linear equations using QR-decomposition by modified Gram-Schmidt orthogonalization");
+    WriteLine("\n__________________________________________________________________________________________________________");
 
-    WriteLine("__________________________________________________\nPart 1:");
+    WriteLine("Question A: \nSolving linear equations using QR-decomposition by modified Gram-Schmidt orthogonalization");
+
+    WriteLine("Part 1:");
 	// var A=new matrix("1 2 4;5 6 3;8 7 10;3 6 1;4 5 2");
     WriteLine("Random tall (n>m) matrix A:");
 	A.print("A = ");
@@ -30,7 +31,7 @@ static void Main(){
 
     (A*R).print("QR");
 
-    WriteLine("\n__________________________________________________\nPart 2:");
+    WriteLine("-------------------------------------------\nPart 2:");
     A = new matrix(3,3);
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
@@ -56,7 +57,7 @@ static void Main(){
     x.print("x =");
     WriteLine("Ch eck result:");
     (A*x).print("Ax= ");
-    WriteLine("\n\n");
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 }
 }

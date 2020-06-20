@@ -154,7 +154,7 @@
 	<path stroke='black'  d='M105.0,120.1 L105.0,560.0 L981.9,560.0 L981.9,120.1 L105.0,120.1 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(543.4,82.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Solution 0</tspan></text>
+		<text><tspan font-family="Arial" >Solution for f(rmax)=0 for different rmax</tspan></text>
 	</g>
 </g>
 	<g id="gnuplot_plot_1a" ><title>fexact</title>
@@ -1202,7 +1202,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1582.4,82.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text xml:space="preserve"><tspan font-family="Arial"  xml:space="preserve">Solution  r*exp(-kr)</tspan></text>
+		<text xml:space="preserve"><tspan font-family="Arial"  xml:space="preserve">Solution  for f(rmax)=r*exp(-kr) for different rmax</tspan></text>
 	</g>
 </g>
 	<g id="gnuplot_plot_1b" ><title>fexact</title>
@@ -2245,7 +2245,7 @@
 	<path stroke='black'  d='M135.0,710.1 L135.0,1114.0 L981.9,1114.0 L981.9,710.1 L135.0,710.1 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(29.5,912.1) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >f</tspan></text>
+		<text><tspan font-family="Arial" >Δf</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -2255,13 +2255,13 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(558.4,672.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Residual 0</tspan></text>
+		<text><tspan font-family="Arial" >Residual for f(rmax)= 0</tspan></text>
 	</g>
 </g>
-	<g id="gnuplot_plot_1c" ><title>fexact</title>
+	<g id="gnuplot_plot_1c" ><title>Δf</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(868.9,747.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >f</tspan><tspan font-family="Arial"  font-size="16.0" dy="6.00px">exact</tspan><tspan font-size="20.0" dy="-6.00"></tspan></text>
+		<text><tspan font-family="Arial" >Δf</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -2493,7 +2493,7 @@
 	<path stroke='black'  d='M1187.0,710.1 L1187.0,1114.0 L2005.9,1114.0 L2005.9,710.1 L1187.0,710.1 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1053.5,912.1) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >delta f</tspan></text>
+		<text><tspan font-family="Arial" >Δf</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -2503,13 +2503,13 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1596.4,672.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text xml:space="preserve"><tspan font-family="Arial"  xml:space="preserve">Residual  r*exp(-kr)</tspan></text>
+		<text xml:space="preserve"><tspan font-family="Arial"  xml:space="preserve">Residual  for f(rmax)=r*exp(-kr)</tspan></text>
 	</g>
 </g>
-	<g id="gnuplot_plot_1d" ><title>fexact</title>
+	<g id="gnuplot_plot_1d" ><title>Δf</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1892.9,747.6)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >f</tspan><tspan font-family="Arial"  font-size="16.0" dy="6.00px">exact</tspan><tspan font-size="20.0" dy="-6.00"></tspan></text>
+		<text><tspan font-family="Arial" >Δf</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -2716,23 +2716,23 @@
 	<path stroke='black'  d='M135.0,1300.0 L135.0,1704.0 L981.9,1704.0 L981.9,1300.0 L135.0,1300.0 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(29.5,1502.0) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >delta f</tspan></text>
+		<text><tspan font-family="Arial" >Found energy</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(558.4,1786.5)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >r</tspan></text>
+		<text><tspan font-family="Arial" >rmax</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(558.4,1262.5)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Energy 0</tspan></text>
+		<text><tspan font-family="Arial" >Energy for f(rmax)=0</tspan></text>
 	</g>
 </g>
-	<g id="gnuplot_plot_1e" ><title>E</title>
+	<g id="gnuplot_plot_1e" ><title>Found energy</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(868.9,1337.5)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >E</tspan></text>
+		<text><tspan font-family="Arial" >Found energy</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -2850,13 +2850,13 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1603.4,1262.5)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="middle">
-		<text xml:space="preserve"><tspan font-family="Arial"  xml:space="preserve">Energy  r*exp(-kr)</tspan></text>
+		<text xml:space="preserve"><tspan font-family="Arial"  xml:space="preserve">Energy  for f(rmax)=r*exp(-kr)</tspan></text>
 	</g>
 </g>
-	<g id="gnuplot_plot_1f" ><title>E</title>
+	<g id="gnuplot_plot_1f" ><title>Energy energy</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1892.9,1337.5)" stroke="none" fill="black" font-family="Arial" font-size="20.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >E</tspan></text>
+		<text><tspan font-family="Arial" >Energy energy</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">

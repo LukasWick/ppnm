@@ -1,0 +1,54 @@
+
+__________________________________________________________________________________________________________
+Test of integrators
+
+ ∫0π dx  ∫0π dy sin(x)*sin(y). With N = 100000
+Plain integration      : 4.01567520004101
+Halton integration     : 3.99997143346783
+Lattice integration    : 3.99997405920109
+Analytical integration : 4
+Plain error estimate:  : 0.00914351466034677
+Halton error estimate  : 2.35713864658463E-05
+Lattice error estimate : 0.000199558588252052
+Actual P error         : 0.0156752000410139
+Actual H error         : 2.85665321677619E-05
+Actual L error         : 2.59407989089411E-05
+
+Integral of sphere with radius 1.14471424255333. With N = 1000000
+Plain integration      : 6.281631
+Halton integration     : 6.282414
+Lattice integration    : 6.284007
+Analytical integration : 6.28318530717959
+Plain error estimate:  : 0.0114081176790844
+Halton error estimate  : 0.00216000000000066
+Lattice error estimate : 0.00145799999999996
+Actual P error         : 0.00155430717958627
+Actual H error         : 0.000771307179586067
+Actual L error         : 0.000821692820413666
+
+Integral of half sphere with radius 1.14471424255333. With N = 1000000
+Plain integration      : 3.14061478317556
+Halton integration     : 3.14159144493586
+Lattice integration    : 3.14156702191131
+Analytical integration : 3.14159265358979
+Plain error estimate:  : 0.00379570399949873
+Halton error estimate  : 1.08604794952227E-05
+Lattice error estimate : 4.12425237596437E-05
+Actual P error         : 0.000977870414229809
+Actual H error         : 1.20865392894132E-06
+Actual L error         : 2.56316784787991E-05
+
+Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
+With N = 1000000
+Plain integration      : 1.43104701772603
+Halton integration     : 1.39064511682199
+Lattice integration    : 1.38503958565172
+Analytical integration : 1.39320392968568
+Plain error estimate:  : 0.0496133757382602
+Halton error estimate  : 0.0180038392180426
+Lattice error estimate : 0.0102419404269211
+Actual P error         : 0.0378430880403529
+Actual H error         : 0.0025588128636882
+Actual L error         : 0.00816434403395316
+__________________________________________________________________________________________________________
+

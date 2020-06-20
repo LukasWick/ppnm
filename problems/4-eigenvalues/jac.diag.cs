@@ -33,10 +33,7 @@ public partial class jacobi{
                     if (highestFirst) phi = 1.0/2*Atan2(-2*Ap[q],-(d[q]-d[p])); // Added - on both arguments makes it sort by highest eigenvalue first
                     else phi = 1.0/2*Atan2(2*Ap[q],(d[q]-d[p]));
                     s = Sin(phi);
-                    c = Cos(phi);
-                    //Save last itterations values
-
-                  
+                    c = Cos(phi);                
 
                     // Calculate new values 
                     for(int i =0;i<A.size1;i++){

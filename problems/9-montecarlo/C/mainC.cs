@@ -10,6 +10,10 @@ static void Main(){
     int callCount = 0;
     Func<vector,double> f = (x) => {callCount++;return Sin(x[0])*Sin(x[1]);};
 
+
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question C\n Recursive stratified sampling.");
+    WriteLine("Test stratified sampleing");
     WriteLine($"\n ∫0π dx  ∫0π dy sin(x)*sin(y). ");
     
     double acc = 1e-2;
@@ -75,6 +79,7 @@ static void Main(){
 
     // WriteLine("Number of function calls: {0}",res[2]);
 
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 }
 }

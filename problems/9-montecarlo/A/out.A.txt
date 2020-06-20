@@ -1,21 +1,28 @@
 
- ∫0π dx  ∫0π dy sin(x)*sin(y). With N = 2855800
-Numerical integration  : 3.99998951707527
+__________________________________________________________________________________________________________
+Question A
+Plain Monte Carlo integration.
+Test integration
+
+ ∫0π dx  ∫0π dy sin(x)*sin(y). With N = 1000000
+Numerical integration  : 4.0006533273846
 Analytical integration : 4
-Error estimate         : 0.00171003180414242
-Actual error           : 1.04829247336014E-05
+Error estimate         : 0.00288813382969379
+Actual error           : 0.000653327384600111
 
 Integral of circle with radius 1.14471424255333. With N = 1000000
-Numerical integration  : 3.14003935758182
+Numerical integration  : 3.14181785813597
 Analytical integration : 3.14159265358979
-Error estimate         : 0.00206662456998679
-Actual error           : 0.0015532960079736
+Error estimate         : 0.0020658600301614
+Actual error           : 0.000225204546180802
 
 Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
 With N = 1000000
-Numerical integration  : 1.41751072001133
+Numerical integration  : 1.38751609821359
 Analytical integration : 1.39320392968568
 As it is a difficult singular integral
 We expect the errors to be large
-Error estimate         : 0.0194437557918033
-Actual error           : 0.024306790325652
+Error estimate         : 0.00709336533186609
+Actual error           : 0.00568783147208496
+__________________________________________________________________________________________________________
+

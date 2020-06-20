@@ -13,9 +13,9 @@ static void Main(){
     for(int i=0;i<3;i++){
         b[i]=10*(rnd.NextDouble()-0.5); 
     }
-    WriteLine("\n\n");
+    WriteLine("\n__________________________________________________________________________________________________________");
 
-    WriteLine("C: Test QR-decomposition by Givens rotations:");
+    WriteLine("Question C: \nTest QR-decomposition by Givens rotations:");
     var QR = A.copy();
     A.print("A = ");
 
@@ -29,7 +29,7 @@ static void Main(){
     b.print("x = ");
     WriteLine("Check result:");
     (A*b).print("Ax= ");
-    WriteLine("\n\n");
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 }
 }

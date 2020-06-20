@@ -1,7 +1,7 @@
-all: plotB.svg
+all: PlotB.svg
 
 
-plotB.svg: plotB.gpi out.tabfun.sin.txt out.fitfun.sin.txt out.exactfun.sin.txt
+PlotB.svg: plotB.gpi out.tabfun.sin.txt out.fitfun.sin.txt out.exactfun.sin.txt
 	gnuplot plotB.gpi
 
 out.tabfun.sin.txt out.fitfun.sin.txt out.exactfun.sin.txt: mainB.exe

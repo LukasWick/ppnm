@@ -1,10 +1,15 @@
-set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotB.svg"
+set term svg font "Arial,20" size 2024,600 background rgb "white"
+set out "PlotB.svg"
 set xlabel "t (days)"
 set ylabel "Number of people"
-set title "SIR model of COVID-19 in denmark"
-set key top right
-plot "out.plotB.txt" using ($1):($2) with lines title "S"\
-, "out.plotB.txt" using ($1):($3) with lines title "I"\
-,"out.plotB.txt" using ($1):($4) with lines title "R"
 
+set multiplot layout 1,2 title "SIR model of COVID-19 in denmark"
+set title "For guessed values"
+set key top right
+plot "out.plotB.data" using ($1):($2) with lines title "S"\
+, "out.plotB.data" using ($1):($3) with lines title "I"\
+,"out.plotB.data" using ($1):($4) with lines title "R"
+#
+set title "SIR model With different T_C\n Increasing T_c flattens the curve"
+set key top right
+plot "out.plotB.multiple.data" using ($1):($2) with lines title "I"\

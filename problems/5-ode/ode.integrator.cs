@@ -44,36 +44,20 @@ public partial class ode_integrator{
         }
 
     }
-
-    public static vector driver(
-	Func<double,vector,vector> f, /* right-hand-side of dydt=f(t,y) */
-	double a,                     /* the start-point a */
-	vector y,                     /* y(a) */
-	double b,                     /* the end-point of the integration */
-	double h,                      /* initial step-size */
-	double acc,                   /* absolute accuracy goal */
-	double eps                    /* relative accuracy goal */
-    ){ /* return y(b) */
-        List<double> ts = new List<double>();
-        List<vector> ys = new List<vector>();
-        driver(f,a, y, b,h, acc,eps,ts,ys);
-        vector yh = new vector(y.size);
-        for(int i = 0; i<y.size;i++){
-            yh[i] = ys[ys.Count-1][i];
-        }
-        return yh;
-    }
+   
+    
+    // Allows one to keep alle steps in the calculation
 
     public static void driver(
 	Func<double,vector,vector> f, /* right-hand-side of dydt=f(t,y) */
 	double a,                     /* the start-point a */
 	vector y,                     /* y(a) */
 	double b,                     /* the end-point of the integration */
-	double h,                      /* initial step-size */
-	double acc,                   /* absolute accuracy goal */
-	double eps,
-    List<double> ts,
-    List<vector> ys                    /* relative accuracy goal */
+	List<double> ts,              /*List for used t values*/
+    List<vector> ys,              /*List for found y values*/
+    double h=1e-1,                /* initial step-size */
+	double acc=1e-2,              /* absolute accuracy goal */
+	double eps=1e-2               /* relative accuracy goal */                   
     ){
     vector tau = new vector(y.size);
     vector err = new vector(y.size);
@@ -83,7 +67,6 @@ public partial class ode_integrator{
     double tol;
     ts.Add(t);
     ys.Add(yt.copy());
-
     while(t<b){
         if (b<t+h)
             h = b-t;
@@ -102,23 +85,43 @@ public partial class ode_integrator{
         h *= factor;
         
     }
-    
-
-    // return Tuple.Create(ts,ys);
     }
 
+     // Only returns the last value
+     // Runs the driver giving a list and only returns the last value
+    public static vector driver(
+	Func<double,vector,vector> f, /* right-hand-side of dydt=f(t,y) */
+	double a,                     /* the start-point a */
+	vector y,                     /* y(a) */
+	double b,                     /* the end-point of the integration */
+	double h=1e-1,                      /* initial step-size */
+	double acc=1e-2,                   /* absolute accuracy goal */
+	double eps=1e-2                    /* relative accuracy goal */
+    ){ /* return y(b) */
+        List<double> ts = new List<double>();
+        List<vector> ys = new List<vector>();
+        driver(f,a, y, b,ts,ys,h,acc,eps);
+        vector yh = new vector(y.size);
+        for(int i = 0; i<y.size;i++){
+            yh[i] = ys[ys.Count-1][i];
+        }
+        return yh;
+    }
+
+    //Provide vector of times at wich you want the value. 
+    //Runs the ODE from first to last point while saving the points interpolates to give the values in y 
     public static matrix driver(
 	Func<double,vector,vector> f, /* right-hand-side of dydt=f(t,y) */
 	vector ts,                     /* points return y at these points */
 	vector y,                     /* starting y */
-	double h,                      /* initial step-size */
-	double acc,                   /* absolute accuracy goal */
-	double eps                    /* relative accuracy goal */
+	double h=1e-1,                      /* initial step-size */
+	double acc=1e-2,                   /* absolute accuracy goal */
+	double eps=1e-2                    /* relative accuracy goal */
     ){ /* return y(b) */
 
         List<double> ts_found= new List<double>();
         List<vector> ys_found = new List<vector>();
-        driver(f,ts[0], y, ts[-1],h, acc,eps,ts_found,ys_found); //ts[-1] is last elemnt in vector
+        driver(f,ts[0], y, ts[-1],ts_found,ys_found,h, acc,eps); //ts[-1] is last elemnt in vector
         vector[] ys_vectors = new vector[y.size];
 
         vector ts_vector =  new vector(ts_found.Count);

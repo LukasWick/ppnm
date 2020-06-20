@@ -25,10 +25,10 @@ static void Main(){
         }
         vector d = new vector(Arnd.size1);
         sw.Start();
-        diag_cyclic(Arnd,v,d);
+        int rotations = diag_cyclic(Arnd,v,d);
         sw.Stop();
 
-        outputfile_B.WriteLine("{0} {1} {2}",n,sw.ElapsedMilliseconds,Pow(10,3*(Log10(n)-Log10(n0))));
+        outputfile_B.WriteLine("{0} {1} {2} {3}",n,sw.ElapsedMilliseconds,Pow(10,3*(Log10(n)-Log10(n0))),rotations);
 
     }
     outputfile_B.Close();

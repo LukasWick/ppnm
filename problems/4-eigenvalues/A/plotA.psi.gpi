@@ -1,5 +1,5 @@
 set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotA.psi.svg"
+set out "PlotA.psi.svg"
 set xlabel "t"
 set ylabel "y"
 set rmargin 0

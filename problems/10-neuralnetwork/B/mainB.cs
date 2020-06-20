@@ -13,7 +13,7 @@ static void Main(){
     // Func<double,double> f = (X) => {return 10-X*X;};
     
 
-    int N = 15;
+    int N = 10;
     double a = -PI,b=PI;
     vector x = linspace(a,b,N);
     vector y = new vector(N);

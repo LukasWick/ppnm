@@ -1,10 +1,10 @@
-all: OutA1.txt plotA.psi.svg plotA.E.svg
+all: OutA1.txt PlotA.psi.svg PlotA.E.svg
 	cat OutA1.txt
 
-plotA.psi.svg: plotA.psi.gpi out.plotA.psi.txt
+PlotA.psi.svg: plotA.psi.gpi out.plotA.psi.txt
 	gnuplot $<
 
-plotA.E.svg: plotA.E.gpi out.plotA.E.txt
+PlotA.E.svg: plotA.E.gpi out.plotA.E.txt
 	gnuplot $<
 
 OutA1.txt out.plotA.E.txt out.plotA.psi.txt: mainA.exe

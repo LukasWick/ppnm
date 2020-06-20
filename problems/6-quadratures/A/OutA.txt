@@ -1,4 +1,9 @@
 
+__________________________________________________________________________________________________________
+Question A
+Recursive adaptive integrator
+Tested on different integrals
+
 ∫01 dx √(x) = 2/3 .
 Numerical integration: 0.666680171540712
 Error goal           : 0.0001
@@ -10,3 +15,5 @@ Numerical integration: 3.14159283948562
 Error goal           : 0.000314159265358979
 Actual error         : 1.85895826732008E-07
 Called function 824 times
+__________________________________________________________________________________________________________
+

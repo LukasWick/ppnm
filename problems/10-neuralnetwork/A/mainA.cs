@@ -13,9 +13,10 @@ static void Main(){
     // Func<double,double> f = (X) => {return 10-X*X;};
     Func<double,double> f = (X) => {return Sin(X);};
 
-    int N = 20;
+    int N = 5;
     double a = -PI+10,b=PI+10;
     vector x = linspace(a,b,N);
+    x.print("x");
     vector y = new vector(N);
     double meanx = sum(x)/N;
     double sum2 = x.dot(x)/N;

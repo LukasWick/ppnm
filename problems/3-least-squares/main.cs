@@ -30,12 +30,16 @@ static void Main(){
     double Delta_lambda = Delta_c[1];
 
     System.IO.StreamWriter  outB = new System.IO.StreamWriter("OutAandB.txt",append:false);
-    outB.WriteLine("\n\nA&B:\nUncertainties of the fitting coefficients:");
+    outB.WriteLine("\n__________________________________________________________________________________________________________");
+    outB.WriteLine("Question A & B & C:");
+    outB.WriteLine("Fit of the data can be seen in PlotA.svg and PlotC.svg");
+    outB.WriteLine("Uncertainties of the fitting coefficients:");
     outB.WriteLine("Fit of data to ln(y) = ln(a)*lamda*t");
     outB.WriteLine("Fit: a = {0:F0} +-{1:F0}, og lambda = {2:F3}+-{3:F3} 1/d",a,Delta_a,lambda,Delta_lambda);
     outB.WriteLine("Half life time: {0:F2} +- {1:F2} d",Log(2)/lambda,Delta_lambda*Log(2)/(lambda*lambda));
     outB.WriteLine("Table value: 3.6319(23) d");
     outB.WriteLine("Fit yield same value with one significant digit, but not within uncertainty.");
+    outB.WriteLine("__________________________________________________________________________________________________________\n");
 
 
     outB.Close();

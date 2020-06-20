@@ -13,6 +13,10 @@ static void Main(){
     vector x0 = new vector(1.0);
     vector root = newton(f,x0,epsilon);
     vector exact = new vector(2.0);
+
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question A\n Newton's method with numerical Jacobian and back-tracking linesearch");
+
     WriteLine("Test function f(x)=x^2-4, root = +-2 (only looking for 2)");
     root.print("Numericaly found root        : ");
     exact.print("Exact root                   : ");
@@ -42,7 +46,7 @@ static void Main(){
     WriteLine("Error goal                   : {0}",epsilon);
     WriteLine("Actual error (norm at rooot) : {0}",f(root).norm());    
     WriteLine("Number of func call          : {0}",callCount);
-    WriteLine("");
+    WriteLine("__________________________________________________________________________________________________________\n");
     callCount = 0;
 }
 }

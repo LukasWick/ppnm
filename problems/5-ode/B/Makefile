@@ -1,9 +1,11 @@
-all: plotB.svg 
+all: PlotB.svg
 
-plotB.svg: plotB.gpi out.plotB.txt
+
+
+PlotB.svg: plotB.gpi out.plotB.data out.plotB.Multiple.data
 	gnuplot $<
 
-out.plotB.txt: mainB.exe
+out.plotB.data out.plotB.Multiple.data: mainB.exe
 	mono $< 
 
 mainB.exe: mainB.cs matlib.dll

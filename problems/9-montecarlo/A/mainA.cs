@@ -10,6 +10,11 @@ static void Main(){
     Func<vector,double> f = (x) => {return Sin(x[0])*Sin(x[1]);};
 
     int N = (int) 1e6;
+
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question A\nPlain Monte Carlo integration.");
+    WriteLine("Test integration");
+
     WriteLine($"\n ∫0π dx  ∫0π dy sin(x)*sin(y). With N = {N}");
     vector a = new vector(0,0);
     vector b = new vector(PI,PI);
@@ -52,6 +57,7 @@ static void Main(){
     WriteLine("As it is a difficult singular integral\nWe expect the errors to be large");
     WriteLine("Error estimate         : {0}",res[1]);
     WriteLine("Actual error           : {0}",Abs(accurate-res[0]));    
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 
 

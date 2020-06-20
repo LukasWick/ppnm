@@ -1,0 +1,34 @@
+
+__________________________________________________________________________________________________________
+Question C
+ Recursive stratified sampling.
+Test stratified sampleing
+
+ ∫0π dx  ∫0π dy sin(x)*sin(y). 
+Numerical integration   : 4.00069544349595
+Analytical integration  : 4
+Tolerance               : 0.05
+Error estimate          : 0.00921034894919415
+Actual error            : 0.000695443495947856
+Number of function calls: 595456
+Err of similar plain MC : 0.00591990142832444
+
+Integral of circle with radius 1.14471424255333.
+Numerical integration   : 3.13948382225545
+Analytical integration  : 3.14159265358979
+Tolerance               : 0.0414159265358979
+Error estimate          : 0.00894642042760582
+Actual error            : 0.00210883133434692
+Number of function calls: 260864
+Err of similar plain MC : 0.00119717899060801
+
+Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
+Numerical integration   : 1.39195726113223
+Analytical integration  : 1.39320392968568
+Tolerance               : 0.0239320392968568
+Error estimate          : 0.00882838035504948
+Actual error            : 0.00124666855344446
+Number of function calls: 734592
+Err of similar plain MC : 0.00948069036473864
+__________________________________________________________________________________________________________
+

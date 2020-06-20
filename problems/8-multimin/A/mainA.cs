@@ -13,7 +13,9 @@ static void Main(){
     vector x = new vector(1.5,0.5);
     int num_of_steps = qnewton(f,ref x,epsilon);
     vector x_exact = new vector(1.0,1.0);
-    WriteLine("");
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question A\n Quasi-Newton method with numerical gradient, back-tracking linesearch, and rank-1 update");
+    
     WriteLine("Test function f(x,y)=(1-x)^2+100(y-x^2)^2, min at 1,1");
     x.print("Numericaly found min x       : ");
     x.print("Exact min x                  : ");
@@ -21,7 +23,6 @@ static void Main(){
     WriteLine("Gradient tollerence          : {0}",epsilon);
     WriteLine("Actual gradient              : {0}",gradient(f,x).norm());
     WriteLine("Actual error                 : {0}",Abs(f(x)-f(x_exact)));    
-    WriteLine("Error                        : {0}",Abs(f(x)-f(x_exact)));    
     WriteLine("Number of steps              : {0}",num_of_steps);
     WriteLine("");
     
@@ -38,8 +39,7 @@ static void Main(){
     WriteLine("Gradient tollerence          : {0}",epsilon);
     WriteLine("Actual gradient              : {0}",gradient(f,x).norm());
     WriteLine("Actual error                 : {0}",Abs(f(x)-f(x_exact)));    
-    WriteLine("Error                        : {0}",Abs(f(x)-f(x_exact)));    
     WriteLine("Number of steps              : {0}",num_of_steps);
-    WriteLine("");
+    WriteLine("__________________________________________________________________________________________________________\n");
 }
 }

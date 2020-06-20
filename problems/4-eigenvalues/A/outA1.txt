@@ -1,8 +1,36 @@
 
-
+Question A 
 Part 1: Test Jacobi diagonalization with cyclic sweeps
 Random symmetric matrix:
 A = 
-   -2.568    -0.773    -2.850 
-   -0.773    -3.687    -0.495 
-   -2.850    -0.495     0.841 
+    1.465     4.730     1.174 
+    4.730    -4.985    -4.521 
+    1.174    -4.521    -2.761 
+Do diagonalization with cyclic sweeps:
+Eigen values
+D
+  -10.268     0.000     0.000 
+    0.000    -0.200     0.000 
+    0.000     0.000     4.187 
+Eigenvectors:
+V
+    0.363     0.431    -0.826 
+   -0.772    -0.357    -0.526 
+   -0.522     0.829     0.203 
+Test decomposition:
+A=VDV^T
+    1.465     4.730     1.174 
+    4.730    -4.985    -4.521 
+    1.174    -4.521    -2.761 
+Test eigen vectors:
+VTAV
+  -10.268     0.000     0.000 
+    0.000    -0.200     0.000 
+    0.000     0.000     4.187 
+
+ -----------------------------
+Part 2:
+See the energy as function of n for the hamiltonian in PlotA.E.svg and the eigenfunction (wavefunctions) in PlotA.psi.svg.
+
+
+

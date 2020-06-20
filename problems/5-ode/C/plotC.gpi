@@ -1,5 +1,5 @@
 set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotB.svg"
+set out "PlotC.svg"
 set xlabel "x"
 set ylabel "y"
 set title "3 Body system"

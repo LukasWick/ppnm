@@ -1,6 +1,6 @@
-all: plotB.svg
+all: PlotB.svg
 
-plotB.svg: plotB.gpi out.B.txt
+PlotB.svg: plotB.gpi out.B.txt
 	gnuplot plotB.gpi
 
 

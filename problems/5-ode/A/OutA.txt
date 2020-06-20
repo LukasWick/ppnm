@@ -1,0 +1,21 @@
+
+
+Question A:
+Implenetation of ODE45
+Solve u''=-u: sin
+Numerical integration  : -0.000671038885361609
+Analytical integration : -2.44921270764475E-16
+Expected error         : 0.001
+Actual error           : 0.000671038885361364
+Solve u'=u: exp
+Numerical integration  : 535.368986870798
+Analytical integration : 535.491655524765
+Expected error         : 0.0545491655524765
+Actual error           : 0.122668653966912
+Three ways of getting y values:
+PlotA1.svg: Integrate from y(n) to y(n+1) from y(0) to y(N)
+PlotA2.svg: The points found during integration
+PlotA3.svg: Interplolate yvalues from points found during integration
+
+
+

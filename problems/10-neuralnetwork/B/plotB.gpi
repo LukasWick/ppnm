@@ -1,11 +1,11 @@
 set term svg font "Arial,20" size 1800,1200 background rgb "white"
-set out "plotB.svg"
+set out "PlotB.svg"
 set xlabel "x"
 set ylabel "y"
 set rmargin 0
 set key top right
 set xtics 1
-set multiplot layout 2,2 title "Neural network interpolation" 
+set multiplot layout 2,2 title "Neural network interpolation of f(x)=0.1*x^2+Sin(x)" 
 set title "interpolation"
 plot "out.tabfun.sin.txt" using ($1):($2) title "tabulated function"\
 ,"out.fitfun.sin.txt" using ($1):($2) with lines title "interpolation"\

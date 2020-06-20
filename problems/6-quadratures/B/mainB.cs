@@ -9,7 +9,11 @@ class main{
 static void Main(){
     int callCount = 0;
     Func<double,double> f = (x) => {callCount++;return 1/Sqrt(x);};
-    
+
+    WriteLine("\n__________________________________________________________________________________________________________");
+    WriteLine("Question B\nOpen quadrature with Clenshaw–Curtis variable transformation");
+    WriteLine("Tested on different integrals");
+
     WriteLine("\n∫01 dx 1/√(x) = 2 .");
 
     WriteLine("With clenshaw curtis: {0}",clenshaw_curtis(f,0,1,1e-2,1e-2));
@@ -45,6 +49,8 @@ static void Main(){
 
     WriteLine("With o8av: {0}",o8av(f,0,1,1e-15,1e-15));
     WriteLine("Called function {0} times",callCount);
+
+    WriteLine("__________________________________________________________________________________________________________\n");
 
 }
 }

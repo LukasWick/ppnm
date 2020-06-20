@@ -43,7 +43,7 @@ static void Main(){
     double exact = PI;
     System.IO.StreamWriter outputfile0 = new System.IO.StreamWriter("out.plot.PHL.Circle.data",append:false);
     for(int N =(int)10; N<(int) 2e6; N=(int) (1.25*N)){        
-        vector resP = plainmc(f,a,b,N,new Random(1));
+        vector resP = plainmc(f,a,b,N,new Random());
         double errorP = Abs(resP[0]-exact);
         vector resH = haltonmc(f,a,b,N);
         double errorH = Abs(resH[0]-exact);
@@ -66,7 +66,7 @@ static void Main(){
     exact = PI;
     outputfile0 = new System.IO.StreamWriter("out.plot.PHL.Sphere.data",append:false);
     for(int N =(int)10; N<(int) 2e6; N=(int) (1.25*N)){        
-        vector resP = plainmc(f,a,b,N,new Random(1));
+        vector resP = plainmc(f,a,b,N,new Random());
         double errorP = Abs(resP[0]-exact);
         vector resH = haltonmc(f,a,b,N);
         double errorH = Abs(resH[0]-exact);
@@ -105,7 +105,7 @@ static void Main(){
     b = new vector(PI,PI,PI);
     outputfile0 = new System.IO.StreamWriter("out.plot.PHL.InverseCos.data",append:false);
     for(int N =(int)10; N<(int) 2e6; N=(int) (1.25*N)){        
-        vector resP = plainmc(f,a,b,N,new Random(1));
+        vector resP = plainmc(f,a,b,N,new Random());
         double errorP = Abs(resP[0]-exact);
         vector resH = haltonmc(f,a,b,N);
         double errorH = Abs(resH[0]-exact);
@@ -122,7 +122,7 @@ static void Main(){
     b = new vector(PI,PI,PI);
     outputfile0 = new System.IO.StreamWriter("out.plot.PHL.SimpleSin.data",append:false);
     for(int N =(int)10; N<(int) 2e6; N=(int) (1.25*N)){        
-        vector resP = plainmc(f,a,b,N,new Random(1));
+        vector resP = plainmc(f,a,b,N,new Random());
         double errorP = Abs(resP[0]-exact);
         vector resH = haltonmc(f,a,b,N);
         double errorH = Abs(resH[0]-exact);

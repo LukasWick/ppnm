@@ -1,13 +1,14 @@
 
-all: A/OutA.txt B/OutB.txt C/OutC.txt
+all: A/OutA B/OutB C/OutC ReadMe.md
+	cat ReadMe.md
 
-A/OutA.txt: A/Makefile
+A/OutA: A/Makefile
 	cd A && make
 
-B/OutB.txt: B/Makefile
+B/OutB: B/Makefile
 	cd B && make
 
-C/OutC.txt: C/Makefile
+C/OutC: C/Makefile
 	cd C && make
 
 clean:

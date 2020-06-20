@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Fri Jun 19 14:58:16 2020
+Sat Jun 20 13:25:52 2020
 
 
 FIT:    data read from "out.plotC.time.data" using 1:(log10($2))
@@ -14,31 +14,31 @@ function used for fitting: f(x)
 	f(x) = log10((x/b1)**a1 + c1)
 fitted parameters initialized with current variable values
 
-   5 3.4268622781e-02  -5.48e-01  1.60e-05    1.644413e+01   3.133164e+00   2.616214e+00
+   5 3.4740235871e-02  -3.78e-02  1.60e-05    1.748747e+01   3.162620e+00   2.853077e+00
 
 After 5 iterations the fit converged.
-final sum of squares of residuals : 0.0342686
-rel. change during last iteration : -5.48212e-06
+final sum of squares of residuals : 0.0347402
+rel. change during last iteration : -3.78191e-07
 
 degrees of freedom    (FIT_NDF)                        : 8
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.065449
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00428358
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0658979
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00434253
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-b1              = 16.4441          +/- 1.141        (6.937%)
-a1              = 3.13316          +/- 0.1233       (3.936%)
-c1              = 2.61621          +/- 0.7861       (30.05%)
+b1              = 17.4875          +/- 1.213        (6.937%)
+a1              = 3.16262          +/- 0.1278       (4.04%)
+c1              = 2.85308          +/- 0.735        (25.76%)
 
 correlation matrix of the fit parameters:
                 b1     a1     c1     
 b1              1.000 
-a1              0.964  1.000 
-c1              0.764  0.708  1.000 
+a1              0.963  1.000 
+c1              0.749  0.694  1.000 
 
 
 *******************************************************************************
-Fri Jun 19 14:58:16 2020
+Sat Jun 20 13:25:52 2020
 
 
 FIT:    data read from "out.plotC.time.data" using 1:(log10($3))
@@ -51,31 +51,31 @@ function used for fitting: g(x)
 	g(x) = log10((x/b2)**a2 + c2)
 fitted parameters initialized with current variable values
 
-   6 3.1685435850e-02  -2.15e-02  1.60e-06    1.857725e+01   3.179069e+00   1.260080e+00
+   6 1.9232320755e-02  -3.30e-02  1.60e-06    1.874584e+01   3.119005e+00   1.331891e+00
 
 After 6 iterations the fit converged.
-final sum of squares of residuals : 0.0316854
-rel. change during last iteration : -2.14957e-07
+final sum of squares of residuals : 0.0192323
+rel. change during last iteration : -3.30341e-07
 
 degrees of freedom    (FIT_NDF)                        : 8
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0629339
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00396068
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.049031
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00240404
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-b2              = 18.5772          +/- 1.074        (5.782%)
-a2              = 3.17907          +/- 0.1133       (3.564%)
-c2              = 1.26008          +/- 0.4532       (35.97%)
+b2              = 18.7458          +/- 0.8784       (4.686%)
+a2              = 3.11901          +/- 0.09         (2.886%)
+c2              = 1.33189          +/- 0.3542       (26.59%)
 
 correlation matrix of the fit parameters:
                 b2     a2     c2     
 b2              1.000 
-a2              0.955  1.000 
-c2              0.776  0.716  1.000 
+a2              0.956  1.000 
+c2              0.778  0.719  1.000 
 
 
 *******************************************************************************
-Fri Jun 19 14:58:16 2020
+Sat Jun 20 13:25:52 2020
 
 
 FIT:    data read from "out.plotC.rotations.data" using 1:(log10($2))
@@ -112,7 +112,7 @@ c1              0.895  0.869  1.000
 
 
 *******************************************************************************
-Fri Jun 19 14:58:16 2020
+Sat Jun 20 13:25:52 2020
 
 
 FIT:    data read from "out.plotC.rotations.data" using 1:(log10($3))

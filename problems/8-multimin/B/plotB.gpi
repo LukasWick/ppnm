@@ -1,5 +1,5 @@
 set term svg font "Arial,20" size 1024,600 background rgb "white"
-set out "plotB.svg"
+set out "PlotB.svg"
 set xlabel "E [GeV]"
 set ylabel "σ"
 set rmargin 0

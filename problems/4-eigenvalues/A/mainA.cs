@@ -21,7 +21,7 @@ static void Main(){
 	// var A= new matrix("3 2 4;2 0 2;4 2 3");
     // var A= new matrix("3 2 4;2 0 2;4 2 12");
     var V = new matrix(A.size1,A.size2);
-    WriteLine("\n\nPart 1: Test Jacobi diagonalization with cyclic sweeps");
+    WriteLine("\nQuestion A \nPart 1: Test Jacobi diagonalization with cyclic sweeps");
     WriteLine("Random symmetric matrix:");
 
     A.print("A = ");
@@ -35,6 +35,8 @@ static void Main(){
     (V*D*V.T).print("A=VDV^T");
     WriteLine("Test eigen vectors:");
     (V.T*A*V).print("VTAV");
+    WriteLine("\n -----------------------------\nPart 2:");
+    WriteLine("See the energy as function of n for the hamiltonian in PlotA.E.svg and the eigenfunction (wavefunctions) in PlotA.psi.svg.");
     WriteLine("\n\n");
     // part 2
     int n=100;
@@ -48,7 +50,8 @@ static void Main(){
     H[n-1,n-1]=-2;
     H = H/(-s*s);
     V = new matrix(n,n);
-    vector eigenvals = diag_cyclic(H,V);
+    vector eigenvals = new vector(n);
+    diag_cyclic(H,V,eigenvals);
     
     System.IO.StreamWriter outputfile_A_E = new System.IO.StreamWriter("out.plotA.E.txt",append:false);
     for (int k=0; k < n/3; k++){

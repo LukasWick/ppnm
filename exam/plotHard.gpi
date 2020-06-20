@@ -3,7 +3,7 @@ set out "plotHard.tex"
 set size ratio -1
 set size square
 
-set key bottom left
+set key under
 set yrange [0.000005:2]
 set multiplot layout 1,2 
 
@@ -31,9 +31,9 @@ fit h(x) "out.plot.PHL.InverseCos.data" using (log10($1)):(log10($8)) via b3,a3
 plot "out.plot.PHL.InverseCos.data" using ($1):($4) pt 7 ps 0.4 lc  rgb "red" title "Plain"\
 ,"out.plot.PHL.InverseCos.data" using ($1):($6) pt 7 ps 0.4 lc  rgb "orange" title "Halton"\
 ,"out.plot.PHL.InverseCos.data" using ($1):($8) pt 7 ps 0.4 lc  rgb "green" title "Lattice"\
-,"out.plot.PHL.InverseCos.data" using ($1):(10**(f(log10($1)))) with lines lt 3 lc rgb "red" lw 3 title sprintf ("FitP :a:{%.2f}",a1) \
-,"out.plot.PHL.InverseCos.data" using ($1):(10**(g(log10($1)))) with lines lt 3 lc rgb "orange" lw 3 title sprintf ("FitH :a:{%.2f}",a2) \
-,"out.plot.PHL.InverseCos.data" using ($1):(10**(h(log10($1)))) with lines lt 3 lc rgb "green" lw 3 title sprintf ("FitL :a:{%.2f}",a3) \
+,"out.plot.PHL.InverseCos.data" using ($1):(10**(f(log10($1)))) with lines lt 3 lc rgb "red" lw 3 title sprintf ("FitP a:{%.2f}",a1) \
+,"out.plot.PHL.InverseCos.data" using ($1):(10**(g(log10($1)))) with lines lt 3 lc rgb "orange" lw 3 title sprintf ("FitH a:{%.2f}",a2) \
+,"out.plot.PHL.InverseCos.data" using ($1):(10**(h(log10($1)))) with lines lt 3 lc rgb "green" lw 3 title sprintf ("FitL a:{%.2f}",a3) \
 #
 set title "Estimated Error "
 set xlabel "N"

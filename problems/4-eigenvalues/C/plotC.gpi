@@ -1,5 +1,5 @@
 set term svg font "Arial,20" size 1224,600 background rgb "white"
-set out "plotC.svg"
+set out "PlotC.svg"
 
 set xrange [20:200]
 

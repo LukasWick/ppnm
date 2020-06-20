@@ -1,6 +1,6 @@
 set term svg font "Arial,20" size 1024*1.2,600*1.2 background rgb "white"
 
-set out "plotB.svg"
+set out "PlotB.svg"
 set size ratio -1
 set size square
 
@@ -25,7 +25,7 @@ set fit quiet
 fit f(x) "out.B.txt" using (log10($1)):(log10($4)) via b1
 
 plot "out.B.txt" using ($1):($4) pt 7 ps 0.4 lc  rgb "red" title "Plain"\
-,"out.B.txt" using ($1):(10**(f(log10($1)))) with lines lt 3 lc rgb "red" lw 3 title "Fit 1/sqrt(N)" \
+,"out.B.txt" using ($1):(10**(f(log10($1)))) with lines lt 3 lc rgb "red" lw 3 title sprintf("Fit {%.2f}/sqrt(N)",b1) \
 #
 set title "Estimated Error "
 set xlabel "N"

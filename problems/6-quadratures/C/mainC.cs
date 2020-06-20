@@ -9,6 +9,11 @@ class main{
 static void Main(){
     // Func<double,double> f = (x) => {callCount++;return 1/Sqrt(x);};
     double err = 0;
+    WriteLine("\n__________________________________________________________________________________________________________");
+
+    WriteLine("Question C\n Infinite limits");
+    WriteLine("Tested on different integrals");
+    WriteLine("First test error:");
 
     Func<double,double> f = (x) => 4*Sqrt(1-x*x);
     WriteLine("\n∫01 dx 4√(1-x²) = π = {0}",PI);
@@ -18,8 +23,19 @@ static void Main(){
     WriteLine("Actual error:     {0}",Abs(Q-PI));
     
     int callCount = 0;
+    WriteLine("\n Testing opposite limits:");
+
+    WriteLine("∫10 dx 4√(1-x²) = -π = {0}.",PI);
+    WriteLine("With clenshaw curtis: {0}",clenshaw_curtis(f,1,0,1e-6,1e-6));
+    WriteLine("Called function {0} times",callCount);
+    callCount =0;
+    WriteLine("Without clenshaw curtis: {0}",adapt(f,1,0,1e-6,1e-6));
+    WriteLine("Called function {0} times",callCount);
+    callCount =0;
+
     f= (x) => {callCount++;return Exp(-x*x);};
 
+    WriteLine("\n Testing infinite  limits:");
     WriteLine("\n∫-inf,inf dx exp(-x²) = √π = {0}",Sqrt(PI));
     Q = integrate(f,double.NegativeInfinity,double.PositiveInfinity,1e-3,1e-3);
     WriteLine("My integration: {0}",Q);
@@ -60,6 +76,8 @@ static void Main(){
     WriteLine("o8av error:       {0}",Abs(Q-PI/2));
     WriteLine("o8av #calls:      {0}",callCount);
     callCount = 0;
+
+    WriteLine("__________________________________________________________________________________________________________\n");
 }
 }
     
