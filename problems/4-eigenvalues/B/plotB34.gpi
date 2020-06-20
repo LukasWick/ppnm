@@ -25,9 +25,9 @@ f(x) = log10((x/b1)**a1 + c1)
 g(x) = log10((x/b2)**a2 + c2)
 h(x) = log10((x/b3)**a3 + c3) 
 set fit quiet
-fit f(x) "out.plotB34vbv1.data" using 1:(log10($2)) via b1,a1,c1
-fit g(x) "out.plotB34vbvn.data" using 1:(log10($2)) via b2,a2,c2
-fit h(x) "out.plotB34cyclic.data" using 1:(log10($2)) via b3,a3,c3
+fit f(x) "out.plotB34vbv1.data" using 1:(log10($2)) via b1,c1
+fit g(x) "out.plotB34vbvn.data" using 1:(log10($2)) via b2,c2
+fit h(x) "out.plotB34cyclic.data" using 1:(log10($2)) via b3,c3
 
 
 

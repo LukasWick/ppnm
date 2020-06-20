@@ -14,48 +14,56 @@ public partial class jacobi{
         double diff;
         double absT0l= 0;
         int rotations = 0;
+        int highestFirstVal = 1;
+        if (highestFirst) highestFirstVal=-1;
         do {
             for(int p =0;p<A.size1;p++){
                 for(int q =p+1;q<A.size2;q++){
                     rotations++;
-                    vector Ap = A[p].copy();
-                    vector Aq = A[q].copy();
-                    Ap[p] = d[p];
-                    Aq[q] = d[q];
-                    for(int i =p+1 ;i<A.size1;i++){
-                            Ap[i] = A[p,i];
-                    }
-                    for(int i =q+1 ;i<A.size1;i++){
-                            Aq[i] = A[q,i];
-                    }
-
-
-                    if (highestFirst) phi = 1.0/2*Atan2(-2*Ap[q],-(d[q]-d[p])); // Added - on both arguments makes it sort by highest eigenvalue first
-                    else phi = 1.0/2*Atan2(2*Ap[q],(d[q]-d[p]));
+                    double app = d[p];
+                    double aqq = d[q];
+                    double apq = A[p,q];
+                    phi = 1.0/2*Atan2(highestFirstVal*2*apq,highestFirstVal*(aqq-app)); // Added - on both arguments makes it sort by highest eigenvalue first
                     s = Sin(phi);
-                    c = Cos(phi);                
-
+                    c = Cos(phi);
+                    
                     // Calculate new values 
                     for(int i =0;i<A.size1;i++){
-                        if (i<p)
-                            A[i,p] = c*Ap[i]-s*Aq[i];
-                        if (i>p)
-                            A[p,i] = c*Ap[i]-s*Aq[i];
-
-                        if (i<q)
-                            A[i,q] = s*Ap[i]+c*Aq[i];
-                        if (i>q)
-                            A[q,i] = s*Ap[i]+c*Aq[i];
+                        if (i>p){
+                            double api = A[p,i];
+                            if (i>q){
+                                double aqi = A[q,i];
+                                A[p,i] = c*api-s*aqi;
+                                A[q,i] = s*api+c*aqi;
+                            }
+                            else if (i<q){
+                                double aqi = A[i,q];
+                                A[p,i] = c*api-s*aqi;
+                                A[i,q] = s*api+c*aqi;
+                            }
+                        }
+                        else if (i<p){
+                            double api = A[i,p];
+                            if (i>q){
+                                double aqi = A[q,i];
+                                A[i,p] = c*api-s*aqi;
+                                A[q,i] = s*api+c*aqi;
+                            }
+                            else if (i<q){
+                                double aqi = A[i,q];
+                                A[i,p] = c*api-s*aqi;
+                                A[i,q] = s*api+c*aqi;
+                            }
+                        }
                     }
-                    d[p] = c*c*Ap[p] -2*s*c*Ap[q]+s*s*Aq[q];
-                    d[q] = s*s*Ap[p] +2*s*c*Ap[q]+c*c*Aq[q];                
-                    A[p,q] = s*c*(Ap[p]-Aq[q])+(c*c-s*s)*Ap[q];
-
-                    vector Vp = V[p].copy();
-                    vector Vq = V[q].copy();
+                    d[p] = c*c*app -2*s*c*apq+s*s*aqq;
+                    d[q] = s*s*app +2*s*c*apq+c*c*aqq;
+                    A[p,q] =0;
                     for(int i =0;i<A.size1;i++){
-                        V[i,p] = c*Vp[i]-s*Vq[i];
-                        V[i,q] = s*Vp[i]+c*Vq[i];
+                        double vip = V[i,p];
+                        double viq = V[i,q];
+                        V[i,p] = c*vip-s*viq;
+                        V[i,q] = s*vip+c*viq;
                     }
                 }
             }
@@ -67,69 +75,7 @@ public partial class jacobi{
         } while (diff > absT0l);
         return rotations;
     }
-    // static public vector diag_cyclic_highest_first(matrix A,matrix V){
-    //     vector d = new vector(A.size1);
-    //     V.set_unity();
-    //     for (int i = 0; i<d.size;i++){
-    //         d[i] = A[i,i];
-    //     }
-    //     double phi, s,c;
-    //     vector old_d = d.copy();
-    //     double diff;
-    //     double absT0l= 0;
-    //     int rotations = 0;
-    //     int sweeps = 0;
-    //     do {sweeps++;
-    //         for(int p =0;p<A.size1;p++){
-    //             for(int q =p+1;q<A.size2;q++){
-    //                 rotations++;
-    //                 phi = 1.0/2*Atan2(-2*A[p,q],-(d[q]-d[p])); // Added - on both arguments makes it sort by highest eigenvalue first
-    //                 s = Sin(phi);
-    //                 c = Cos(phi);
-    //                 //Save last itterations values
-    //                 vector Ap = A[p].copy();
-    //                 vector Aq = A[q].copy();
-    //                 Ap[p] = d[p];
-    //                 Aq[q] = d[q];
-    //                 for(int i =p+1 ;i<A.size1;i++){
-    //                         Ap[i] = A[p,i];
-    //                 }
-    //                 for(int i =q+1 ;i<A.size1;i++){
-    //                         Aq[i] = A[q,i];
-    //                 }
 
-    //                 // Calculate new values 
-    //                 for(int i =0;i<A.size1;i++){
-    //                     if (i<p)
-    //                         A[i,p] = c*Ap[i]-s*Aq[i];
-    //                     if (i>p)
-    //                         A[p,i] = c*Ap[i]-s*Aq[i];
-
-    //                     if (i<q)
-    //                         A[i,q] = s*Ap[i]+c*Aq[i];
-    //                     if (i>q)
-    //                         A[q,i] = s*Ap[i]+c*Aq[i];
-    //                 }
-    //                 d[p] = c*c*Ap[p] -2*s*c*Ap[q]+s*s*Aq[q];
-    //                 d[q] = s*s*Ap[p] +2*s*c*Ap[q]+c*c*Aq[q];                
-    //                 A[p,q] = s*c*(Ap[p]-Aq[q])+(c*c-s*s)*Ap[q];
-
-    //                 vector Vp = V[p].copy();
-    //                 vector Vq = V[q].copy();
-    //                 for(int i =0;i<A.size1;i++){
-    //                     V[i,p] = c*Vp[i]-s*Vq[i];
-    //                     V[i,q] = s*Vp[i]+c*Vq[i];
-    //                 }
-    //             }
-    //         }
-    //         vector diff_d = old_d-d;
-    //         diff = 0;
-    //         for(int i=0;i<diff_d.size;i++)
-    //             diff += Abs(diff_d[i]);
-    //         old_d = d.copy();
-    //     } while (diff > absT0l);
-    //     return d;
-    // }
 
 
     // Help function. Makes sure A is symetric after evaluation and returns the diagonal matrix
@@ -147,9 +93,7 @@ public partial class jacobi{
         }
         return D;
     }
-
-    // n is number of eigenvalues to find
-    static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFirst=false){
+static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFirst=false){
         V.set_unity();
         for (int i = 0; i<d.size;i++){
             d[i] = A[i,i];
@@ -159,54 +103,56 @@ public partial class jacobi{
         double diff;
         double absT0l= 0;
         int rotations = 0;
-
+        int highestFirstVal = 1;
+        if (highestFirst) highestFirstVal=-1;
         for(int p =0;p<n;p++){
             do {
                 for(int q =p+1;q<A.size2;q++){
-                    if (highestFirst) phi = 1.0/2*Atan2(-2*A[p,q],-(d[q]-d[p])); // Added - on both arguments makes it sort by highest eigenvalue first
-                    else phi = 1.0/2*Atan2(2*A[p,q],(d[q]-d[p]));
-
+                
+                    double app = d[p];
+                    double aqq = d[q];
+                    double apq = A[p,q];
+                    phi = 1.0/2*Atan2(highestFirstVal*2*apq,highestFirstVal*(aqq-app)); // Added - on both arguments makes it sort by highest eigenvalue first
                     s = Sin(phi);
                     c = Cos(phi);
-                    //Save last itterations values
-                    vector Ap = A[p].copy();
-                    vector Aq = A[q].copy();
-                    Ap[p] = d[p];
-                    Aq[q] = d[q];
-
-                    for(int i =p+1 ;i<A.size1;i++){
-                            Ap[i] = A[p,i];
-                    }
-                    for(int i =q+1 ;i<A.size1;i++){
-                            Aq[i] = A[q,i];
-                    }
-
+                    
                     // Calculate new values 
                     for(int i =0;i<A.size1;i++){
-                        // if (i<p)
-                        //     A[i,p] = c*Ap[i]-s*Aq[i];
-
-                        if (i>p)
-                            A[p,i] = c*Ap[i]-s*Aq[i];
-
-                        if (i<q){
-                            if(i>=p){
-                                A[i,q] = s*Ap[i]+c*Aq[i];
+                        if (i>p){
+                            double api = A[p,i];
+                            if (i>q){
+                                double aqi = A[q,i];
+                                A[p,i] = c*api-s*aqi;
+                                A[q,i] = s*api+c*aqi;
+                            }
+                            else if (i<q){
+                                double aqi = A[i,q];
+                                A[p,i] = c*api-s*aqi;
+                                A[i,q] = s*api+c*aqi;
                             }
                         }
-                        if (i>q)
-                            A[q,i] = s*Ap[i]+c*Aq[i];
+                        else if (i<p){
+                            double api = A[i,p];
+                            if (i>q){
+                                double aqi = A[q,i];
+                                // A[i,p] = c*api-s*aqi;
+                                A[q,i] = s*api+c*aqi;
+                            }
+                            else if (i<q){
+                                double aqi = A[i,q];
+                                // A[i,p] = c*api-s*aqi;
+                                A[i,q] = s*api+c*aqi;
+                            }
+                        }
                     }
-                    d[p] = c*c*Ap[p] -2*s*c*Ap[q]+s*s*Aq[q];
-                    d[q] = s*s*Ap[p] +2*s*c*Ap[q]+c*c*Aq[q];                
-                    // A[p,q] = s*c*(Ap[p]-Aq[q])+(c*c-s*s)*Ap[q];
+                    d[p] = c*c*app -2*s*c*apq+s*s*aqq;
+                    d[q] = s*s*app +2*s*c*apq+c*c*aqq;
                     A[p,q] =0;
-
-                    vector Vp = V[p].copy();
-                    vector Vq = V[q].copy();
                     for(int i =0;i<A.size1;i++){
-                        V[i,p] = c*Vp[i]-s*Vq[i];
-                        V[i,q] = s*Vp[i]+c*Vq[i];
+                        double vip = V[i,p];
+                        double viq = V[i,q];
+                        V[i,p] = c*vip-s*viq;
+                        V[i,q] = s*vip+c*viq;
                     }
                 }
                 diff = old_d[p]-d[p];
@@ -215,8 +161,9 @@ public partial class jacobi{
         }
         return rotations;
     }
+
     // Qustion C
-    static public int diag_classic(matrix A,matrix V, vector d){
+    static public int diag_classic(matrix A,matrix V, vector d, bool highestFirst=false){
         V.set_unity();
         for (int i = 0; i<d.size;i++){
             d[i] = A[i,i];
@@ -226,7 +173,8 @@ public partial class jacobi{
         double diff;
         double absT0l= 0;
         int rotations = 0;
-
+        int highestFirstVal = 1;
+        if (highestFirst) highestFirstVal=-1;
         do {
             for(int p =0;p<A.size1-1;p++){
                 int q = p+1;
@@ -241,44 +189,50 @@ public partial class jacobi{
                 }
                 
                 rotations++;
-                phi = 1.0/2*Atan2(2*A[p,q],d[q]-d[p]);
+                double app = d[p];
+                double aqq = d[q];
+                double apq = A[p,q];
+                phi = 1.0/2*Atan2(highestFirstVal*2*apq,highestFirstVal*(aqq-app)); // Added - on both arguments makes it sort by highest eigenvalue first
                 s = Sin(phi);
                 c = Cos(phi);
-
-                //Save last itterations values
-                vector Ap = A[p].copy();
-                vector Aq = A[q].copy();
-                Ap[p] = d[p];
-                Aq[q] = d[q];
-
-                for(int i =p+1 ;i<A.size1;i++){
-                        Ap[i] = A[p,i];
-                }
-                for(int i =q+1 ;i<A.size1;i++){
-                        Aq[i] = A[q,i];
-                }
-
+                
                 // Calculate new values 
                 for(int i =0;i<A.size1;i++){
-                    if (i<p)
-                        A[i,p] = c*Ap[i]-s*Aq[i];
-                    if (i>p)
-                        A[p,i] = c*Ap[i]-s*Aq[i];
-
-                    if (i<q)
-                        A[i,q] = s*Ap[i]+c*Aq[i];
-                    if (i>q)
-                        A[q,i] = s*Ap[i]+c*Aq[i];
+                    if (i>p){
+                        double api = A[p,i];
+                        if (i>q){
+                            double aqi = A[q,i];
+                            A[p,i] = c*api-s*aqi;
+                            A[q,i] = s*api+c*aqi;
+                        }
+                        else if (i<q){
+                            double aqi = A[i,q];
+                            A[p,i] = c*api-s*aqi;
+                            A[i,q] = s*api+c*aqi;
+                        }
+                    }
+                    else if (i<p){
+                        double api = A[i,p];
+                        if (i>q){
+                            double aqi = A[q,i];
+                            A[i,p] = c*api-s*aqi;
+                            A[q,i] = s*api+c*aqi;
+                        }
+                        else if (i<q){
+                            double aqi = A[i,q];
+                            A[i,p] = c*api-s*aqi;
+                            A[i,q] = s*api+c*aqi;
+                        }
+                    }
                 }
-                d[p] = c*c*Ap[p] -2*s*c*Ap[q]+s*s*Aq[q];
-                d[q] = s*s*Ap[p] +2*s*c*Ap[q]+c*c*Aq[q];                
-                A[p,q] = s*c*(Ap[p]-Aq[q])+(c*c-s*s)*Ap[q];
-
-                vector Vp = V[p].copy();
-                vector Vq = V[q].copy();
+                d[p] = c*c*app -2*s*c*apq+s*s*aqq;
+                d[q] = s*s*app +2*s*c*apq+c*c*aqq;
+                A[p,q] =0;
                 for(int i =0;i<A.size1;i++){
-                    V[i,p] = c*Vp[i]-s*Vq[i];
-                    V[i,q] = s*Vp[i]+c*Vq[i];
+                    double vip = V[i,p];
+                    double viq = V[i,q];
+                    V[i,p] = c*vip-s*viq;
+                    V[i,q] = s*vip+c*viq;
                 }
             
             }

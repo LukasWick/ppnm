@@ -26,4 +26,4 @@ matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.exe *.dll *.svg *.data
+	$(RM) Out* *.txt out* *.exe *.dll *.svg *.data

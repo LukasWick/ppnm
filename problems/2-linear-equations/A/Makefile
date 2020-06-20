@@ -15,4 +15,4 @@ matlib.dll: ../gr.gs.cs $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.txt *.exe *.dll
+	$(RM) Out* *.txt out* *.txt *.exe *.dll

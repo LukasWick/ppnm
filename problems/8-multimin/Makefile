@@ -7,7 +7,9 @@ A/OutA: A/Makefile
 
 B/OutB: B/Makefile
 	cd B && make
-
+	
+C/OutC: C/Makefile
+	cd C && make
 
 
 clean:

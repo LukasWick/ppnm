@@ -5,24 +5,24 @@ Plain Monte Carlo integration.
 Test integration
 
  ∫0π dx  ∫0π dy sin(x)*sin(y). With N = 1000000
-Numerical integration  : 4.0006533273846
+Numerical integration  : 3.99756231061016
 Analytical integration : 4
-Error estimate         : 0.00288813382969379
-Actual error           : 0.000653327384600111
+Error estimate         : 0.002891971373293
+Actual error           : 0.00243768938983635
 
 Integral of circle with radius 1.14471424255333. With N = 1000000
-Numerical integration  : 3.14181785813597
+Numerical integration  : 3.14549951676645
 Analytical integration : 3.14159265358979
-Error estimate         : 0.0020658600301614
-Actual error           : 0.000225204546180802
+Error estimate         : 0.00206490234740965
+Actual error           : 0.0039068631766539
 
 Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
 With N = 1000000
-Numerical integration  : 1.38751609821359
+Numerical integration  : 1.44302554826094
 Analytical integration : 1.39320392968568
 As it is a difficult singular integral
 We expect the errors to be large
-Error estimate         : 0.00709336533186609
-Actual error           : 0.00568783147208496
+Error estimate         : 0.0618150644597881
+Actual error           : 0.0498216185752653
 __________________________________________________________________________________________________________
 

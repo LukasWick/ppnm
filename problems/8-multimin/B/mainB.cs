@@ -18,7 +18,7 @@ static double chiSquared(vector par){
     return chi2;
 }
 static void Main(){
-    System.IO.StreamReader inputfile = new System.IO.StreamReader("higgs_data.txt");
+    System.IO.StreamReader inputfile = new System.IO.StreamReader("higgs_data.data");
     string s = inputfile.ReadLine();
     while(!(s==null)){
 		string[] values = s.Split(new char[] {' '},StringSplitOptions.RemoveEmptyEntries);

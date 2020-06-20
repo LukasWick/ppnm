@@ -18,4 +18,4 @@ matlib.dll: ../jac.diag.cs  $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.exe *.dll *.svg *.log Out*
+	$(RM) Out* *.txt out* *.exe *.dll *.svg *.log Out*

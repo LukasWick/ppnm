@@ -25,7 +25,7 @@ public partial class qr_gs{
         var e = new vector(Q.size1);
         for(int i = 0; i<Q.size1;i++){
                 e[i]=1;
-                B[i]= qr_gs_solve(Q, R, e);
+                B[i]=qr_gs_solve(Q, R, e);
                 e[i]=0;
         }
     return B;

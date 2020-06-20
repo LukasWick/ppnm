@@ -16,4 +16,4 @@ matlib.dll: qspline.cs $(SRC)
 
 
 clean:
-	$(RM) out* *.txt *.exe *.dll *.svg
+	$(RM) Out* *.txt out* *.txt *.exe *.dll *.svg

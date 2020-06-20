@@ -1,7 +1,7 @@
 
 
 Question B
-Question B 1: See figure PlotB1.svg
+Question B 1: See figure PlotB1.svg and PlotB2.svg
 Question B 2
 Question B 2,a
 Random matrix A:
@@ -31,15 +31,15 @@ A with first and second row eliminated
    -0.779     0.315     0.000     0.000 
    -0.066    -0.134     0.888    -0.294 
     0.543    -0.292    -0.797     0.285 
-Second eigenvalues calculated with value by value: -0.401496357335793
-Second eigenvalue calculated with cyclic:          -0.401496357335793
+Second eigenvalue calculated with value by value:  -0.401496357335793
+Second eigenvalue calculated with cyclic:          -0.401496357335794
 You will only change the row above via line 2 and 3 in equation 10, and these only depend on the values of the row above wich are zero
 As the cyclic method gives the eigenvalues sorted by the lowest first and value by value gives the same, value by value gives the lowest eigenvalues first
 Opg for B 3 and 4 see figure PlotB34.svg
 Opg B 5
 Change both signs in the atan2. When the first parameter is zero this gives pi instead of 0, wich makes it sort in the opposite direction
-D sorted by lowest first:  [-1.140 -0.203 1.026 1.884 ]
-D sorted by highest first: [1.884 1.026 -0.203 -1.140 ]
+D sorted by lowest first:  [-1.259 -0.230 0.558 1.566 ]
+D sorted by highest first: [1.566 0.558 -0.230 -1.259 ]
 
 
 

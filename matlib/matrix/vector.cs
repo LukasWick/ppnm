@@ -116,6 +116,7 @@ public double norm(){
 	return meanabs*Sqrt(sum);
 	}
 
+
 public vector copy(){
 	vector b = new vector(this.size);
 	for(int i=0;i<this.size;i++)b[i]=this[i];

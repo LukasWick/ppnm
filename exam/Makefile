@@ -48,4 +48,4 @@ cleanFigsAndDocument:
 	$(RM) *.svg *.log *.aux *.pdf *.dvi *.eps *.out *.fls *.log *.fdb_latexmk plot*.tex log 
 
 clean:
-	$(RM) out* *.exe *.dll *.svg *.log *.aux *.pdf *.dvi *.eps plot*.tex *.out *.fls *.log *.fdb_latexmk log *.data
+	$(RM) Out* *.txt out* *.exe *.dll *.svg *.log *.aux *.pdf *.dvi *.eps plot*.tex *.out *.fls *.log *.fdb_latexmk log *.data

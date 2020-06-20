@@ -17,4 +17,4 @@ matlib.dll: linspline.cs $(SRC)
 
 
 clean:
-	$(RM) out* *.txt *.exe *.dll *.svg
+	$(RM) Out* *.txt out* *.txt *.exe *.dll *.svg

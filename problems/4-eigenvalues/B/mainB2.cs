@@ -8,7 +8,7 @@ using static jacobi;
 class main{
 static void Main(){
     WriteLine("\n\nQuestion B");
-    WriteLine("Question B 1: See figure PlotB1.svg");
+    WriteLine("Question B 1: See figure PlotB1.svg and PlotB2.svg");
 
     // Part 2
     WriteLine("Question B 2");
@@ -52,7 +52,7 @@ static void Main(){
 
     WriteLine("Question B 2,b");
     A_vbv2.print("A with first and second row eliminated ");
-    WriteLine("Second eigenvalues calculated with value by value: {0}",e_vbv2[1]);
+    WriteLine("Second eigenvalue calculated with value by value:  {0}",e_vbv2[1]);
     WriteLine("Second eigenvalue calculated with cyclic:          {0}", e_c[1]);
     WriteLine("You will only change the row above via line 2 and 3 in equation 10, and these only depend on the values of the row above wich are zero");
 
@@ -66,9 +66,15 @@ static void Main(){
     System.IO.StreamWriter outputfile_Bvbvn  = new System.IO.StreamWriter("out.plotB34vbvn.data",append:false);
     System.IO.StreamWriter outputfile_Bcyclic  = new System.IO.StreamWriter("out.plotB34cyclic.data",append:false);
 
-    var N = 400;
-    var n0 = 15;
-    for(n=n0;n<N;n+=(int) Floor(n*0.25)){
+    var N1val = 600;
+    var Nvalbyval = 90;
+    var Ncyclic = 300;
+    var N01val = 40;
+    var N0valbyval = 20;
+    var N0cyclic = 20;
+
+    
+    for(n=Min(Min(N01val,N0valbyval),N0cyclic);n<Max(Max(N1val,Nvalbyval),Ncyclic);n+=(int) Floor(n*0.20)){
         Stopwatch sw_c = new Stopwatch();
         Stopwatch sw_vbv1 = new Stopwatch();
         Stopwatch sw_vbvn = new Stopwatch();
@@ -96,26 +102,26 @@ static void Main(){
         
 
 
-        if(n<90){ //As the runtime is very slow this is only evaluated on matrices of size below 90
+        if(n<Nvalbyval&&n>N0valbyval){ //As the runtime is very slow this is only evaluated on matrices of size below 90
             sw_vbvn.Start();
             diag_frist_n(A_vbvn,v_vbvn,e_vbvn,n);
             sw_vbvn.Stop();
             outputfile_Bvbvn.WriteLine("{0} {1}",n,sw_vbvn.ElapsedMilliseconds);
         }
 
-        if(n<200){ //As the runtime is very slow this is only evaluated on matrices of size below 90
+        if(n<Ncyclic&&n>N0cyclic){ //As the runtime is very slow this is only evaluated on matrices of size below 90
             sw_c.Start();
             diag_cyclic(A_c,v_c,e_c);
             sw_c.Stop();
             outputfile_Bcyclic.WriteLine("{0} {1}",n,sw_c.ElapsedMilliseconds);
         }
 
-
-        sw_vbv1.Start();
-        diag_frist_n(A_vbv1,v_vbv1,e_vbv1,1);
-        sw_vbv1.Stop();
-        
-        outputfile_Bvbv1.WriteLine("{0} {1}",n,sw_vbv1.ElapsedMilliseconds);
+        if(n<N1val&&n>N01val){
+            sw_vbv1.Start();
+            diag_frist_n(A_vbv1,v_vbv1,e_vbv1,1);
+            sw_vbv1.Stop();
+            outputfile_Bvbv1.WriteLine("{0} {1}",n,sw_vbv1.ElapsedMilliseconds);
+        }
         }
         outputfile_Bvbv1.Close();
         outputfile_Bvbvn.Close();

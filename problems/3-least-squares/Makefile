@@ -22,4 +22,4 @@ matlib.dll: least.squares.cs  $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.txt *.exe *.dll *.svg *.data
+	$(RM)  Out* *.txt out* *.txt *.exe *.dll *.svg *.data

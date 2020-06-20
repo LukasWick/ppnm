@@ -1,21 +1,18 @@
-all: PlotB.svg
+all: OutC.txt
+	cat OutC.txt
 
-PlotB.svg: plotB.gpi out.B.txt
-	gnuplot plotB.gpi
-
-
-out.B.txt: mainB.exe
+OutC.txt: mainC.exe
 	mono $< >$@
 
-mainB.exe: mainB.cs matlib.dll
+mainC.exe: mainC.cs matlib.dll
 	mcs $< -reference:$(lastword $^) -out:$@
 
 LIBDIR = ../../../matlib
 SRC :=$(LIBDIR)/matrix/vector.cs
 SRC +=$(LIBDIR)/matrix/matrix.cs
-SRC +=../montecarlo.cs
+SRC +=simplex.cs
 matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:
-	$(RM) out* *.exe *.dll *.svg  Out* *.txt *.log
+	$(RM) out* Out*  *.exe *.dll *.svg *.txt
