@@ -15,7 +15,7 @@ static void Main(){
     WriteLine("Question A\nPlain Monte Carlo integration.");
     WriteLine("Test integration");
 
-    WriteLine($"\n ∫0π dx  ∫0π dy sin(x)*sin(y). With N = {N}");
+    WriteLine($"\n ∫0π dx  ∫0π dy sin(x)*sin(y)=4. With N = {N}");
     vector a = new vector(0,0);
     vector b = new vector(PI,PI);
     vector res = plainmc(f,a,b,N);
@@ -24,6 +24,18 @@ static void Main(){
     WriteLine("Analytical integration : {0}",accurate);
     WriteLine("Error estimate         : {0}",res[1]);
     WriteLine("Actual error           : {0}",Abs(accurate-res[0]));
+
+    WriteLine("Opposite with an opposite limit");
+    WriteLine($"\n ∫π0 dx  ∫0π dy sin(x)*sin(y)=-4. With N = {N}");
+    a = new vector(PI,0);
+    b = new vector(0,PI);
+    res = plainmc(f,a,b,N);
+    accurate = -4;
+    WriteLine("Numerical integration  : {0}",res[0]);
+    WriteLine("Analytical integration : {0}",accurate);
+    WriteLine("Error estimate         : {0}",res[1]);
+    WriteLine("Actual error           : {0}",Abs(accurate-res[0]));
+
 
     // integral of a half sphere
     double r = Pow(3.0/2,1.0/3);

@@ -66,11 +66,11 @@ static void Main(){
     System.IO.StreamWriter outputfile_Bvbvn  = new System.IO.StreamWriter("out.plotB34vbvn.data",append:false);
     System.IO.StreamWriter outputfile_Bcyclic  = new System.IO.StreamWriter("out.plotB34cyclic.data",append:false);
 
-    var N1val = 600;
-    var Nvalbyval = 90;
-    var Ncyclic = 300;
+    var N1val = 500;
+    var Nvalbyval = 85;
+    var Ncyclic = 250;
     var N01val = 40;
-    var N0valbyval = 20;
+    var N0valbyval = 15;
     var N0cyclic = 20;
 
     

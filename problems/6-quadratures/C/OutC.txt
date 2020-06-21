@@ -9,13 +9,20 @@ First test error:
 Numerical integration: 3.14159265769177
 Calculated error: 7.44697172953256E-06
 Actual error:     4.10197920075461E-09
+Called function 560 times
 
  Testing opposite limits:
 ∫10 dx 4√(1-x²) = -π = 3.14159265358979.
 With clenshaw curtis: -3.14159265355524
-Called function 0 times
+Called function 856 times
 Without clenshaw curtis: -3.14159265769177
-Called function 0 times
+Called function 560 times
+
+∫10 dx 1/√(x) = -2 .
+With clenshaw curtis: -1.99987031834155
+Called function 8 times
+Without clenshaw curtis: -1.9995161175042
+Called function 4272 times
 
  Testing infinite  limits:
 
@@ -43,4 +50,5 @@ o8av integration: 1.57048346639314
 o8av error:       0.000312860401757042
 o8av #calls:      16
 __________________________________________________________________________________________________________
+
 

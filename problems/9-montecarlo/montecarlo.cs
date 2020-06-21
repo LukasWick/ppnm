@@ -18,7 +18,7 @@ public static vector plainmc(Func<vector,double> f, vector a,vector b,int N){
    double mean = sum/N;                             // <f_i>
    double sigma = Sqrt(sum2/N - mean*mean);    // sigma² = <(f_i)²> - <f_i>²
    double SIGMA = sigma/Sqrt(N);               // SIGMA² = <Q²> - <Q>²
-   return new vector(mean*volume, SIGMA*volume); //Vector with integral and uncertanty
+   return new vector(mean*volume, Abs(SIGMA*volume)); //Vector with integral and uncertanty
 }
 
 //Calls stratta which calls itself continuesly
@@ -45,7 +45,7 @@ private static vector strata(Func<vector,double> f, vector a,vector b, double ac
     vector stat = stats(fxs);
     double oldN = oldstat[2];
     double integ =V*(stat[0]*N+oldstat[0]*oldN)/(N+oldN);
-    double error = V*Sqrt(stat[0]*N+oldstat[0]*oldN)/(N+oldN);
+    double error = Abs(V*Sqrt(stat[0]*N+oldstat[0]*oldN)/(N+oldN));
 
 
     if (error<acc+eps*Abs(integ)){

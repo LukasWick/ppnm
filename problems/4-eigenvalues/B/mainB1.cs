@@ -12,7 +12,7 @@ static void Main(){
     System.IO.StreamWriter outputfile_B = new System.IO.StreamWriter("out.plotB1.data",append:false);
     var rnd = new Random(1);
     var N = 100;
-    var n0 = 15;
+    var n0 = 25;
     for(int n=n0;n<N;n+=2){
         Stopwatch sw = new Stopwatch();
         matrix v = new matrix(n,n);

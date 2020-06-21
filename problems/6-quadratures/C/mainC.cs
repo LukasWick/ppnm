@@ -14,17 +14,18 @@ static void Main(){
     WriteLine("Question C\n Infinite limits");
     WriteLine("Tested on different integrals");
     WriteLine("First test error:");
+    int callCount = 0;
 
-    Func<double,double> f = (x) => 4*Sqrt(1-x*x);
+    Func<double,double> f = (x) => {callCount++; return 4*Sqrt(1-x*x);};
     WriteLine("\n∫01 dx 4√(1-x²) = π = {0}",PI);
     double Q = adapt(f,0,1,ref err,1e-6,1e-6);
     WriteLine("Numerical integration: {0}",Q);
     WriteLine("Calculated error: {0}",err);
     WriteLine("Actual error:     {0}",Abs(Q-PI));
-    
-    int callCount = 0;
-    WriteLine("\n Testing opposite limits:");
+    WriteLine("Called function {0} times",callCount);
 
+    callCount =0;
+    WriteLine("\n Testing opposite limits:");
     WriteLine("∫10 dx 4√(1-x²) = -π = {0}.",PI);
     WriteLine("With clenshaw curtis: {0}",clenshaw_curtis(f,1,0,1e-6,1e-6));
     WriteLine("Called function {0} times",callCount);
@@ -32,6 +33,15 @@ static void Main(){
     WriteLine("Without clenshaw curtis: {0}",adapt(f,1,0,1e-6,1e-6));
     WriteLine("Called function {0} times",callCount);
     callCount =0;
+    f = (x) => {callCount++;return 1/Sqrt(x);};
+    WriteLine("\n∫10 dx 1/√(x) = -2 .");
+    WriteLine("With clenshaw curtis: {0}",clenshaw_curtis(f,1,0,1e-2,1e-2));
+    WriteLine("Called function {0} times",callCount);
+    callCount =0;
+    WriteLine("Without clenshaw curtis: {0}",adapt(f,1,0,1e-2,1e-2));
+    WriteLine("Called function {0} times",callCount);
+    callCount =0;
+    
 
     f= (x) => {callCount++;return Exp(-x*x);};
 
@@ -77,7 +87,7 @@ static void Main(){
     WriteLine("o8av #calls:      {0}",callCount);
     callCount = 0;
 
-    WriteLine("__________________________________________________________________________________________________________\n");
+    WriteLine("__________________________________________________________________________________________________________\n\n");
 }
 }
     

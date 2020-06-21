@@ -38,8 +38,8 @@ As the cyclic method gives the eigenvalues sorted by the lowest first and value 
 Opg for B 3 and 4 see figure PlotB34.svg
 Opg B 5
 Change both signs in the atan2. When the first parameter is zero this gives pi instead of 0, wich makes it sort in the opposite direction
-D sorted by lowest first:  [-1.259 -0.230 0.558 1.566 ]
-D sorted by highest first: [1.566 0.558 -0.230 -1.259 ]
+D sorted by lowest first:  [-2.676 -0.038 0.102 0.873 ]
+D sorted by highest first: [0.873 0.102 -0.038 -2.676 ]
 
 
 

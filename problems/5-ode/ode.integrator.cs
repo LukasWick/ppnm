@@ -45,9 +45,8 @@ public partial class ode_integrator{
 
     }
    
-    
-    // Allows one to keep alle steps in the calculation
-
+    // Use rk 45 steps to solve ordinary differential equation
+    // All steps in the calculation is saved to the lists ts and ys
     public static void driver(
 	Func<double,vector,vector> f, /* right-hand-side of dydt=f(t,y) */
 	double a,                     /* the start-point a */
@@ -67,21 +66,21 @@ public partial class ode_integrator{
     double tol;
     ts.Add(t);
     ys.Add(yt.copy());
-    while(t<b){
-        if (b<t+h)
-            h = b-t;
-        rkstep45(f,t,yt,h,yh,err);
+    while(t<b){ 
+        if (b<t+h) // if next step exeeds limit
+            h = b-t; // makes sure last step hits limit
+        rkstep45(f,t,yt,h,yh,err); // make step
         err = abs(err); //Elementwise abs
-        tau = (eps*abs(yh)+acc)*Sqrt(h/(b-a));
-        tol = min(tau/err); //Elementwise division
+        tau = (eps*abs(yh)+acc)*Sqrt(h/(b-a)); //sice of tollerated error (/ means Elementwise division)
+        tol = min(tau/err); //  (/ means Elementwise division)
         
-        if(tol>1){
+        if(tol>1){ //acceptable step
             yt = yh.copy();
             t +=h;
             ts.Add(t);
             ys.Add(yt.copy());
         }
-        double factor = Min(Pow(tol,0.25)*0.95,2);
+        double factor = Min(Pow(tol,0.25)*0.95,2); //factor to change stepsize
         h *= factor;
         
     }
@@ -121,11 +120,12 @@ public partial class ode_integrator{
 
         List<double> ts_found= new List<double>();
         List<vector> ys_found = new List<vector>();
-        driver(f,ts[0], y, ts[-1],ts_found,ys_found,h, acc,eps); //ts[-1] is last elemnt in vector
+        driver(f,ts[0], y, ts[-1],ts_found,ys_found,h, acc,eps); // solve using above driver to give points (ts[-1] is last element in vector)
         vector[] ys_vectors = new vector[y.size];
 
         vector ts_vector =  new vector(ts_found.Count);
         
+        // convert list to vector of right format
         for(int i=0;i<y.size;i++){
             ys_vectors[i] = new vector(ts_found.Count);
         }
@@ -143,7 +143,7 @@ public partial class ode_integrator{
         for(int i=0;i<y.size;i++){
             cs = new cspline(ts_vector, ys_vectors[i]);
             for(int j = 0; j<ts.size;j++){
-                ys_res[j][i] = cs.spline(ts[j]);
+                ys_res[j][i] = cs.spline(ts[j]); //interpolates between points
             }
         }
 

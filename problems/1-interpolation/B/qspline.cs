@@ -15,11 +15,11 @@ public class qspline {
 		cBackward[-1] = 0;
 		for (int i = 0; i < n - 1; i++) {
 			DeltaX[i] = (x[i + 1] - x[i]);
-			p[i] = (y[i + 1] - y[i]) / DeltaX[i];
-
+			double DeltaY = (y[i+1] - y[i]);
+			p[i] = DeltaY / DeltaX[i]; //First order gradient
 		}
 		for (int i = 0; i <= n - 3; i++) {
-			cForward[i + 1] = 1.0 / DeltaX[i + 1] * (p[i + 1] - p[i] - cForward[i] * DeltaX[i]);
+			cForward[i+1] = 1.0/DeltaX[i+1] * (p[i+1] - p[i] - cForward[i] * DeltaX[i]);
 		}
 		for (int i = n - 3; i >= 0; i--) {
 			cBackward[i] = 1.0 / DeltaX[i] * (p[i + 1] - p[i] - cBackward[i + 1] * DeltaX[i + 1]);
@@ -33,6 +33,7 @@ public class qspline {
 			throw new System.ArgumentException ($"z = {z} is out of range x form {x[0]} to {x[x.size - 1]}", "z");
 		}
 		int i = 0, j = x.size - 1;
+		// Binary search
 		while (j - i > 1) {
 			int m = (i + j) / 2;
 			if (z > x[m])
@@ -40,7 +41,8 @@ public class qspline {
 			else
 				j = m;
 		}
-		return y[i] + b[i]*(z-x[i])+c[i]*(z-x[i])*(z-x[i]);
+		double dx = (z-x[i]);
+		return y[i] + b[i]*dx+c[i]*dx*dx;
 
 	}
 
@@ -49,6 +51,7 @@ public class qspline {
 			throw new System.ArgumentException ($"z = {z} is out of range x form {x[0]} to {x[x.size - 1]}", "z");
 		}
 		int i = 0, j = x.size - 1;
+		// Binary search
 		while (j - i > 1) {
 			int m = (i + j) / 2;
 			if (z > x[m])
@@ -56,7 +59,8 @@ public class qspline {
 			else
 				j = m;
 		}
-		return b[i]+2*c[i]*(z - x[i]);
+ 		double dx = (z-x[i]);
+		return b[i]+2*c[i]*dx;
 	}
 	public double integral (double z) {
 		if (z < x[0] || z > x[x.size - 1]) {

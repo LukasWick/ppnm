@@ -14,11 +14,10 @@ static void Main(){
     WriteLine("\n__________________________________________________________________________________________________________");
     WriteLine("Question C\n Recursive stratified sampling.");
     WriteLine("Test stratified sampleing");
-    WriteLine($"\n ∫0π dx  ∫0π dy sin(x)*sin(y). ");
+    WriteLine($"\n ∫0π dx  ∫0π dy sin(x)*sin(y) =4. ");
     
     double acc = 1e-2;
     double eps = 1e-2;
-    // int N = 100;
     vector a = new vector(0,0);
     vector b = new vector(PI,PI);
     vector res = stratifiedmc(f,a,b,acc,eps);
@@ -30,8 +29,24 @@ static void Main(){
     WriteLine("Actual error            : {0}",Abs(exact-res[0]));
     WriteLine("Number of function calls: {0}",callCount);
     WriteLine("Err of similar plain MC : {0}",Abs(plainmc(f,a,b,callCount)[0]-exact));
+    
+    WriteLine($"One opposite limit");
+    WriteLine($" ∫π0 dx  ∫0π dy sin(x)*sin(y)=-4. ");
+    
+    acc = 1e-2;
+    eps = 1e-2;
+    a = new vector(PI,0);
+    b = new vector(0,PI);
+    res = stratifiedmc(f,a,b,acc,eps);
+    exact = -4;
+    WriteLine("Numerical integration   : {0}",res[0]);
+    WriteLine("Analytical integration  : {0}",exact);
+    WriteLine("Tolerance               : {0}",acc+eps*Abs(exact));
+    WriteLine("Error estimate          : {0}",res[1]);
+    WriteLine("Actual error            : {0}",Abs(exact-res[0]));
+    WriteLine("Number of function calls: {0}",callCount);
+    WriteLine("Err of similar plain MC : {0}",Abs(plainmc(f,a,b,callCount)[0]-exact));
 
-    // WriteLine("Number of function calls: {0}",res[2]);
 
     // integral of a half sphere
     callCount = 0;

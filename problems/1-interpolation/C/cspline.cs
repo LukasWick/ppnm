@@ -81,7 +81,9 @@ public class cspline {
 			else
 				j = m;
 		}
-		return b[i]+2*c[i]*(z - x[i])+3*d[i]*(z - x[i])*(z - x[i]);
+		double DeltaX =(z-x[i]);
+
+		return b[i]+2*c[i]*DeltaX+3*d[i]*DeltaX*DeltaX;
 	}
 	public double integral (double z) {
 		if (z < x[0] || z > x[x.size - 1]) {

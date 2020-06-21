@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Sat Jun 20 19:29:26 2020
+Sun Jun 21 22:36:46 2020
 
 
 FIT:    data read from "out.B.txt" using (log10($1)):(log10($4))
@@ -13,16 +13,16 @@ function used for fitting: f(x)
 	f(x) = b1 - a1*x
 fitted parameters initialized with current variable values
 
-   3 1.2833652200e+01  -3.63e-06  1.00e-03   -2.029037e-02
+   3 1.1772317893e+01  -3.44e-06  1.00e-03    4.961894e-02
 
 After 3 iterations the fit converged.
-final sum of squares of residuals : 12.8337
-rel. change during last iteration : -3.63196e-11
+final sum of squares of residuals : 11.7723
+rel. change during last iteration : -3.43542e-11
 
 degrees of freedom    (FIT_NDF)                        : 59
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.46639
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.21752
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.446689
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.199531
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-b1              = -0.0202904       +/- 0.06021      (296.7%)
+b1              = 0.0496189        +/- 0.05767      (116.2%)

@@ -68,6 +68,7 @@ public partial class jacobi{
                 }
             }
             vector diff_d = old_d-d;
+            // Stop when diagonal dose not change
             diff = 0;
             for(int i=0;i<diff_d.size;i++)
                 diff += Abs(diff_d[i]);
@@ -78,7 +79,7 @@ public partial class jacobi{
 
 
 
-    // Help function. Makes sure A is symetric after evaluation and returns the diagonal matrix
+    // Helper function. Returns diaginal matrix D and resets A to its symetric form after evaluation
     static public matrix diag_cyclic_complete(matrix A,matrix V){
         vector d = new vector(A.size1);
         diag_cyclic(A, V, d);
@@ -105,14 +106,13 @@ static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFir
         int rotations = 0;
         int highestFirstVal = 1;
         if (highestFirst) highestFirstVal=-1;
-        for(int p =0;p<n;p++){
+        for(int p =0;p<n;p++){ //only do sweeps of first n rows
             do {
                 for(int q =p+1;q<A.size2;q++){
-                
                     double app = d[p];
                     double aqq = d[q];
                     double apq = A[p,q];
-                    phi = 1.0/2*Atan2(highestFirstVal*2*apq,highestFirstVal*(aqq-app)); // Added - on both arguments makes it sort by highest eigenvalue first
+                    phi = 1.0/2*Atan2(highestFirstVal*2*apq,highestFirstVal*(aqq-app)); // HighestFirstVal adds - on both arguments makes it sort by highest eigenvalue first
                     s = Sin(phi);
                     c = Cos(phi);
                     
@@ -135,7 +135,7 @@ static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFir
                             double api = A[i,p];
                             if (i>q){
                                 double aqi = A[q,i];
-                                // A[i,p] = c*api-s*aqi;
+                                // A[i,p] = c*api-s*aqi; // Dont change the zero values
                                 A[q,i] = s*api+c*aqi;
                             }
                             else if (i<q){
@@ -155,6 +155,7 @@ static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFir
                         V[i,q] = s*vip+c*viq;
                     }
                 }
+                // Do next row when eigenvalue of this row dose not change
                 diff = old_d[p]-d[p];
                 old_d = d.copy();
             } while (diff > absT0l);
@@ -179,7 +180,7 @@ static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFir
             for(int p =0;p<A.size1-1;p++){
                 int q = p+1;
 
-                // find index q of largest value
+                // Find index q of largest value in row
                 double val_largest = Abs(A[p,q]);
                 for(int q_it =p+2;q_it<A.size2;q_it++){
                     if (val_largest<=Abs(A[p,q_it])){
@@ -237,6 +238,7 @@ static public int diag_frist_n(matrix A,matrix V,vector d,int n, bool highestFir
             
             }
             vector diff_d = old_d-d;
+            // Stop when diagonal dose not change
             diff = 0;
             for(int i=0;i<diff_d.size;i++)
                 diff += Abs(diff_d[i]);

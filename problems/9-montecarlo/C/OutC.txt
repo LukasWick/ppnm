@@ -4,31 +4,40 @@ Question C
  Recursive stratified sampling.
 Test stratified sampleing
 
- ∫0π dx  ∫0π dy sin(x)*sin(y). 
-Numerical integration   : 3.99972115106692
+ ∫0π dx  ∫0π dy sin(x)*sin(y) =4. 
+Numerical integration   : 4.00022529378695
 Analytical integration  : 4
 Tolerance               : 0.05
-Error estimate          : 0.009198684683111
-Actual error            : 0.000278848933080056
-Number of function calls: 595200
-Err of similar plain MC : 0.00340028157776118
+Error estimate          : 0.00916234666413433
+Actual error            : 0.000225293786945358
+Number of function calls: 597504
+Err of similar plain MC : 0.000509252256593484
+One opposite limit
+ ∫π0 dx  ∫0π dy sin(x)*sin(y)=-4. 
+Numerical integration   : -4.01602665250247
+Analytical integration  : -4
+Tolerance               : 0.05
+Error estimate          : 0.00926495607844637
+Actual error            : 0.0160266525024726
+Number of function calls: 1785088
+Err of similar plain MC : 0.00320465338780451
 
 Integral of circle with radius 1.14471424255333.
-Numerical integration   : 3.14188483048992
+Numerical integration   : 3.13635244465893
 Analytical integration  : 3.14159265358979
 Tolerance               : 0.0414159265358979
-Error estimate          : 0.00900057422709764
-Actual error            : 0.000292176900125618
-Number of function calls: 259072
-Err of similar plain MC : 0.00134378506474508
+Error estimate          : 0.00887813356186819
+Actual error            : 0.00524020893085897
+Number of function calls: 263936
+Err of similar plain MC : 0.0120003693938608
 
 Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
-Numerical integration   : 1.38887315104309
+Numerical integration   : 1.39129608649485
 Analytical integration  : 1.39320392968568
 Tolerance               : 0.0239320392968568
-Error estimate          : 0.00882004165501191
-Actual error            : 0.00433077864258324
-Number of function calls: 735360
-Err of similar plain MC : 0.0222316159000717
+Error estimate          : 0.00883525386040968
+Actual error            : 0.00190784319082482
+Number of function calls: 733056
+Err of similar plain MC : 0.0108804208531941
 __________________________________________________________________________________________________________
 

@@ -1,0 +1,35 @@
+
+__________________________________________________________________________________________________________
+Question A
+Plain Monte Carlo integration.
+Test integration
+
+ ∫0π dx  ∫0π dy sin(x)*sin(y)=4. With N = 1000000
+Numerical integration  : 4.00414563826289
+Analytical integration : 4
+Error estimate         : 0.0028920715124655
+Actual error           : 0.00414563826289083
+Opposite with an opposite limit
+
+ ∫π0 dx  ∫0π dy sin(x)*sin(y)=-4. With N = 1000000
+Numerical integration  : -4.00235927160391
+Analytical integration : -4
+Error estimate         : 0.00289054183179468
+Actual error           : 0.00235927160390759
+
+Integral of circle with radius 1.14471424255333. With N = 1000000
+Numerical integration  : 3.14218722034746
+Analytical integration : 3.14159265358979
+Error estimate         : 0.00206581992867763
+Actual error           : 0.000594566757667891
+
+Integral: ∫0π  dx/π ∫0π  dy/π ∫0π  dz/π [1-cos(x)cos(y)cos(z)]^-1 = Γ(1/4)4/(4π3).
+With N = 1000000
+Numerical integration  : 1.39304023121132
+Analytical integration : 1.39320392968568
+As it is a difficult singular integral
+We expect the errors to be large
+Error estimate         : 0.0104994818504388
+Actual error           : 0.000163698474360707
+__________________________________________________________________________________________________________
+

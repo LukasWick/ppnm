@@ -29,6 +29,12 @@ static void Main(){
     b.print("x = ");
     WriteLine("Check result:");
     (A*b).print("Ax= ");
+
+    var B = qr_givens.qr_givens_inverse(QR);
+    WriteLine("Inverse of A:");
+    B.print("A^-1=B=");
+    WriteLine("Product should give identity");
+    (A*B).print("I=AB=");
     WriteLine("__________________________________________________________________________________________________________\n");
 
 }

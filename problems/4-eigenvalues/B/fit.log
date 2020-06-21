@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Sat Jun 20 19:29:05 2020
+Sun Jun 21 22:36:27 2020
 
 
 FIT:    data read from "out.plotB34vbv1.data" using 1:(log10($2))
@@ -14,29 +14,29 @@ function used for fitting: f(x)
 	f(x) = log10((x/b1)**a1 + c1)
 fitted parameters initialized with current variable values
 
-   6 1.4158194467e+00  -2.61e-02  9.19e-07    3.007266e+01  -1.078324e+00
+   6 1.5086197421e+00  -7.63e-01  9.19e-07    3.091560e+01  -2.045857e+00
 
 After 6 iterations the fit converged.
-final sum of squares of residuals : 1.41582
-rel. change during last iteration : -2.61435e-07
+final sum of squares of residuals : 1.50862
+rel. change during last iteration : -7.63144e-06
 
 degrees of freedom    (FIT_NDF)                        : 12
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.343489
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.117985
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.354568
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.125718
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-b1              = 30.0727          +/- 2.425        (8.062%)
-c1              = -1.07832         +/- 2.087        (193.5%)
+b1              = 30.9156          +/- 2.484        (8.036%)
+c1              = -2.04586         +/- 1.332        (65.11%)
 
 correlation matrix of the fit parameters:
                 b1     c1     
 b1              1.000 
-c1              0.578  1.000 
+c1              0.704  1.000 
 
 
 *******************************************************************************
-Sat Jun 20 19:29:05 2020
+Sun Jun 21 22:36:27 2020
 
 
 FIT:    data read from "out.plotB34vbvn.data" using 1:(log10($2))
@@ -49,29 +49,29 @@ function used for fitting: g(x)
 	g(x) = log10((x/b2)**a2 + c2)
 fitted parameters initialized with current variable values
 
-   5 6.3068672358e-02  -5.61e-01  9.01e-06    7.784838e+00  -2.058752e+01
+   6 6.9298602552e-02  -3.94e-01  9.01e-07    8.437955e+00  -1.495668e+01
 
-After 5 iterations the fit converged.
-final sum of squares of residuals : 0.0630687
-rel. change during last iteration : -5.60837e-06
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.0692986
+rel. change during last iteration : -3.93886e-06
 
 degrees of freedom    (FIT_NDF)                        : 6
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.102525
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0105114
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.10747
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0115498
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-b2              = 7.78484          +/- 0.2599       (3.339%)
-c2              = -20.5875         +/- 3.85         (18.7%)
+b2              = 8.43796          +/- 0.3002       (3.558%)
+c2              = -14.9567         +/- 3.409        (22.79%)
 
 correlation matrix of the fit parameters:
                 b2     c2     
 b2              1.000 
-c2              0.867  1.000 
+c2              0.844  1.000 
 
 
 *******************************************************************************
-Sat Jun 20 19:29:05 2020
+Sun Jun 21 22:36:27 2020
 
 
 FIT:    data read from "out.plotB34cyclic.data" using 1:(log10($2))
@@ -84,22 +84,232 @@ function used for fitting: h(x)
 	h(x) = log10((x/b3)**a3 + c3)
 fitted parameters initialized with current variable values
 
-   6 2.0939615582e-02  -3.35e-02  9.10e-07    2.266334e+01  -9.407137e-02
+  23 4.2978012077e-01  -3.01e-01  9.10e-21    2.174161e+01  -1.730307e+00
 
-After 6 iterations the fit converged.
-final sum of squares of residuals : 0.0209396
-rel. change during last iteration : -3.34922e-07
+After 23 iterations the fit converged.
+final sum of squares of residuals : 0.42978
+rel. change during last iteration : -3.01071e-06
 
 degrees of freedom    (FIT_NDF)                        : 13
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.040134
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00161074
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.181824
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.03306
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-b3              = 22.6633          +/- 0.2105       (0.9287%)
-c3              = -0.0940714       +/- 0.0952       (101.2%)
+b3              = 21.7416          +/- 0.7836       (3.604%)
+c3              = -1.73031         +/- 0.2267       (13.1%)
 
 correlation matrix of the fit parameters:
                 b3     c3     
 b3              1.000 
-c3              0.536  1.000 
+c3              0.861  1.000 
+
+
+*******************************************************************************
+Sun Jun 21 22:38:01 2020
+
+
+FIT:    data read from "out.plotB34vbv1.data" using 1:(log10($2))
+        format = x:z
+        x range restricted to [10.0000 : 500.000]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = log10((x/b1)**a1 + c1)
+fitted parameters initialized with current variable values
+
+   6 5.0066250366e-01  -7.90e-01  9.19e-07    3.600794e+01   3.262751e+00
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.500663
+rel. change during last iteration : -7.89756e-06
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.204259
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0417219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 36.0079          +/- 1.923        (5.341%)
+c1              = 3.26275          +/- 1.623        (49.75%)
+
+correlation matrix of the fit parameters:
+                b1     c1     
+b1              1.000 
+c1              0.401  1.000 
+
+
+*******************************************************************************
+Sun Jun 21 22:38:01 2020
+
+
+FIT:    data read from "out.plotB34vbvn.data" using 1:(log10($2))
+        format = x:z
+        x range restricted to [10.0000 : 500.000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = log10((x/b2)**a2 + c2)
+fitted parameters initialized with current variable values
+
+   6 5.0071030305e-02  -3.23e-01  9.00e-07    8.552828e+00  -1.475916e+01
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.050071
+rel. change during last iteration : -3.23205e-06
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.100071
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0100142
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b2              = 8.55283          +/- 0.3015       (3.525%)
+c2              = -14.7592         +/- 3.106        (21.04%)
+
+correlation matrix of the fit parameters:
+                b2     c2     
+b2              1.000 
+c2              0.858  1.000 
+
+
+*******************************************************************************
+Sun Jun 21 22:38:01 2020
+
+
+FIT:    data read from "out.plotB34cyclic.data" using 1:(log10($2))
+        format = x:z
+        x range restricted to [10.0000 : 500.000]
+        #datapoints = 12
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = log10((x/b3)**a3 + c3)
+fitted parameters initialized with current variable values
+
+   6 1.6994687356e-02  -9.18e-02  9.14e-07    2.246439e+01  -1.133369e+00
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.0169947
+rel. change during last iteration : -9.18074e-07
+
+degrees of freedom    (FIT_NDF)                        : 10
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0412246
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00169947
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b3              = 22.4644          +/- 0.2334       (1.039%)
+c3              = -1.13337         +/- 0.1212       (10.69%)
+
+correlation matrix of the fit parameters:
+                b3     c3     
+b3              1.000 
+c3              0.686  1.000 
+
+
+*******************************************************************************
+Sun Jun 21 22:39:18 2020
+
+
+FIT:    data read from "out.plotB34vbv1.data" using 1:(log10($2))
+        format = x:z
+        x range restricted to [10.0000 : 500.000]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = log10((x/b1)**a1 + c1)
+fitted parameters initialized with current variable values
+
+   5 2.4889623811e-01  -4.34e-02  9.19e-06    3.486429e+01   1.953449e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.248896
+rel. change during last iteration : -4.33847e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.144019
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0207414
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b1              = 34.8643          +/- 1.281        (3.674%)
+c1              = 1.95345          +/- 0.9937       (50.87%)
+
+correlation matrix of the fit parameters:
+                b1     c1     
+b1              1.000 
+c1              0.445  1.000 
+
+
+*******************************************************************************
+Sun Jun 21 22:39:18 2020
+
+
+FIT:    data read from "out.plotB34vbvn.data" using 1:(log10($2))
+        format = x:z
+        x range restricted to [10.0000 : 500.000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = log10((x/b2)**a2 + c2)
+fitted parameters initialized with current variable values
+
+   6 2.6860710303e-02  -5.01e-03  8.82e-07    8.599492e+00  -5.057217e+00
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.0268607
+rel. change during last iteration : -5.01392e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0619455
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00383724
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b2              = 8.59949          +/- 0.165        (1.918%)
+c2              = -5.05722         +/- 0.8343       (16.5%)
+
+correlation matrix of the fit parameters:
+                b2     c2     
+b2              1.000 
+c2              0.778  1.000 
+
+
+*******************************************************************************
+Sun Jun 21 22:39:18 2020
+
+
+FIT:    data read from "out.plotB34cyclic.data" using 1:(log10($2))
+        format = x:z
+        x range restricted to [10.0000 : 500.000]
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = log10((x/b3)**a3 + c3)
+fitted parameters initialized with current variable values
+
+  11 2.0740219236e-01  -2.28e-04  9.11e+00    2.142932e+01  -2.150959e+00
+
+After 11 iterations the fit converged.
+final sum of squares of residuals : 0.207402
+rel. change during last iteration : -2.28181e-09
+
+degrees of freedom    (FIT_NDF)                        : 11
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.137313
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0188547
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b3              = 21.4293          +/- 0.627        (2.926%)
+c3              = -2.15096         +/- 0.2357       (10.96%)
+
+correlation matrix of the fit parameters:
+                b3     c3     
+b3              1.000 
+c3              0.842  1.000 

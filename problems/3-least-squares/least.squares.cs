@@ -20,21 +20,21 @@ public partial class least_squares{
         var b = y/dy;
         
         var R = new matrix(A.size2,A.size2);
-        qr_gs_decomp(A,R);
+        qr_gs_decomp(A,R); // A is now Q in QR decomposition
         
         var inverse_R = new matrix(R.size1,R.size2);
-        var e = new vector(R.size2);
+        var e = new vector(R.size2); // Unitvector for inverting R
         
+        // Calculate iverse of A
         for(int i = 0; i<R.size1;i++){
                 e[i]=1;
-                backsub(R, e);
                 inverse_R[i] = backsub(R, e);
                 e[i]=0;
         }
 
-        sigma = inverse_R*inverse_R.T;
-        c = qr_gs_solve(A,R,b);
-        Delta_c = new vector(c.size);
+        sigma = inverse_R*inverse_R.T; //covariance matrix
+        c = qr_gs_solve(A,R,b); //Best fit
+        Delta_c = new vector(c.size); //Fit uncertatny
         for(int i =0;i<c.size;i++) 
             Delta_c[i] = Sqrt(sigma[i,i]);
     }
